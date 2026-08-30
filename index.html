@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keshav</title>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;overflow-x:clip;background:#fff;color:#1d1d1f;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1d1d1f;text-decoration:none}
+a:hover{color:#6e6e73}
+img{display:block}
+::selection{background:#1d1d1f;color:#fff}
+@keyframes omUp{0%{opacity:0;transform:translateY(90px) scale(.92);filter:blur(11px)}55%{filter:blur(0)}100%{opacity:1;transform:none;filter:blur(0)}}
+@keyframes omWord{0%{opacity:0;transform:translateY(1.15em) rotate(7deg) scale(.7);filter:blur(20px)}55%{filter:blur(0)}100%{opacity:1;transform:none;filter:blur(0)}}
+@keyframes omLine{from{transform:scaleX(0);opacity:.15}to{transform:scaleX(1);opacity:1}}
+@keyframes omInL{0%{opacity:0;transform:translateX(-155px) scale(.955);filter:blur(7px)}60%{filter:blur(0)}100%{opacity:1;transform:none;filter:blur(0)}}
+@keyframes omInR{0%{opacity:0;transform:translateX(155px) scale(.955);filter:blur(7px)}60%{filter:blur(0)}100%{opacity:1;transform:none;filter:blur(0)}}
+@keyframes omBar{from{transform:scaleY(0);opacity:.4}to{transform:scaleY(1);opacity:1}}
+@keyframes omImg{0%{opacity:0;clip-path:inset(23% 16% 23% 16% round 48px);transform:scale(1.22);filter:blur(9px)}60%{filter:blur(0)}100%{opacity:1;clip-path:inset(0 0 0 0 round 30px);transform:none;filter:blur(0)}}
+</style>
+</head>
+<body>
+
+<div style="position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:100;display:flex;align-items:center;gap:22px;padding:11px 22px;border-radius:999px;background:rgba(255,255,255,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border:1px solid rgba(0,0,0,.07);box-shadow:0 1px 12px rgba(0,0,0,.05)">
+  <span style="font-size:14px;font-weight:600;letter-spacing:-.01em">Keshav</span>
+  <span style="width:1px;height:12px;background:rgba(0,0,0,.14)"></span>
+  <a href="#startup" style="font-size:13px;color:#6e6e73">Startup</a>
+  <a href="#research" style="font-size:13px;color:#6e6e73">Research</a>
+  <a href="#projects" style="font-size:13px;color:#6e6e73">Projects</a>
+  <a href="#cv" style="font-size:13px;color:#6e6e73">CV</a>
+  <a href="#contact" style="font-size:13px;color:#6e6e73">Contact</a>
+</div>
+
+<main>
+  <section style="min-height:82vh;display:flex;flex-direction:column;justify-content:center;padding:clamp(100px,12vw,150px) 24px clamp(56px,8vw,100px);max-width:1240px;margin:0 auto">
+    <div data-reveal data-entry style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(36px,5vw,80px);align-items:center">
+      <div data-etext data-slide="L">
+        <div style="font-size:clamp(30px,3.6vw,48px);letter-spacing:-.03em;font-weight:600">Hi, I&#8217;m Keshav &#128075;</div>
+        <div style="margin:18px 0 0;max-width:27em;font-size:clamp(18px,1.9vw,24px);line-height:1.4;color:#1d1d1f;font-weight:500;letter-spacing:-.015em">I build AI products.</div>
+        <p style="margin:18px 0 0;max-width:30em;font-size:clamp(16px,1.6vw,19px);line-height:1.6;color:#6e6e73;text-wrap:pretty">I&#8217;m a senior at Park Tudor School in Indianapolis, Indiana. I started coding at nine, following a YouTube HTML course to build a Facebook clone, and fell in love with programming. When my dad showed me ChatGPT in 2023, my focus shifted to building AI systems. More than the technology, though, my real passion is leading teams and sharing my ideas with the world, whether from a conference stage or around a small table. In my free time I&#8217;m a dedicated gymgoer (just hit 225 on bench press), a new runner training for a sub-1:55 half marathon, and a jazz musician (bass guitar on top!).</p>
+      </div>
+      <div data-ethumb data-slide="R" data-zoom style="border-radius:32px;overflow:hidden;border:1px solid rgba(0,0,0,.09);max-width:420px;justify-self:end;width:100%">
+        <img src="assets/keshav.png" alt="Keshav" style="width:100%;height:auto;transition:transform .8s cubic-bezier(.2,.7,.2,1)">
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(64px,7vw,110px) 24px 0;max-width:1000px;margin:0 auto;text-align:center">
+    <h2 data-unravel style="margin:0 auto;max-width:18em;font-size:clamp(28px,4.4vw,54px);line-height:1.04;letter-spacing:-.04em;font-weight:600">What I&#8217;m interested in.</h2>
+    <p data-reveal style="margin:clamp(26px,3.6vw,44px) auto 0;max-width:34em;font-size:clamp(17px,1.7vw,21px);line-height:1.55;color:#6e6e73;text-wrap:pretty">In 1903, the New York Times argued that a working flying machine was a million years away. Sixty-nine days later, the Wright brothers flew; sixty-six years after that, we walked on the moon. Now that AI has made coding and knowledge almost free, I think humanity&#8217;s next step is to reapportion that freed-up ambition toward log-linear, outsized results. The startups that matter shouldn&#8217;t chase small things; they should take on the audacious ones, energy, physical intelligence, even interstellar travel, that today feel inconceivable.</p>
+  </section>
+
+  <section id="startup" style="padding:clamp(108px,13vw,200px) 24px 0;max-width:1000px;margin:0 auto;text-align:center">
+    <h2 data-unravel style="margin:0;font-size:clamp(32px,4.6vw,64px);line-height:1;letter-spacing:-.035em;font-weight:600">Startup</h2>
+    <div data-rule style="margin:44px auto 0;width:min(220px,40%);height:1px;background:rgba(0,0,0,.16);transform-origin:center"></div>
+  </section>
+
+  <section style="padding:clamp(24px,3.5vw,48px) 24px 0;max-width:1240px;margin:0 auto">
+    <div data-reveal style="padding:clamp(34px,4.4vw,72px);border:1px solid rgba(0,0,0,.09);border-radius:32px">
+      <h4 style="margin:0;max-width:22em;font-size:clamp(26px,3.6vw,52px);line-height:1.04;letter-spacing:-.035em;font-weight:600;text-wrap:balance">Kilra: Digital Health OS</h4>
+      <div style="margin-top:20px;font-size:15.5px;color:#1d1d1f">Founder, CEO</div>
+      <p style="margin:22px 0 0;max-width:34em;font-size:16.5px;line-height:1.58;color:#6e6e73;text-wrap:pretty">I built and lead the product end to end, from the custom ML models to the AI-driven growth. People log symptoms, medications, sleep, and stress, and Kilra learns how their body reacts, surfacing the real triggers behind how they feel, so they can adjust their lifestyle quickly instead of waiting on expensive, drawn-out doctor visits.</p>
+      <div style="margin-top:clamp(44px,5vw,72px);display:flex;gap:clamp(40px,6vw,90px);flex-wrap:wrap;align-items:flex-end">
+        <div>
+          <div style="font-size:clamp(30px,3.4vw,46px);line-height:1;letter-spacing:-.04em;font-weight:600">$10K</div>
+          <div style="margin-top:12px;font-size:13px;color:#86868b">annualized revenue</div>
+        </div>
+        <div>
+          <div style="font-size:clamp(30px,3.4vw,46px);line-height:1;letter-spacing:-.04em;font-weight:600">iOS</div>
+          <div style="margin-top:12px;font-size:13px;color:#86868b">live on the App Store</div>
+        </div>
+        <a href="https://apps.apple.com/us/app/kilra-symptom-tracker/id6760767331" target="_blank" rel="noopener" data-arrow style="margin-left:auto;display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:999px;background:#1d1d1f;color:#fff;font-size:15px">View on the App Store <span data-arrowtip style="display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1)">&#8594;</span></a>
+      </div>
+      <div style="margin-top:clamp(40px,5vw,64px);display:flex;gap:clamp(12px,1.6vw,22px);justify-content:center;align-items:flex-start;flex-wrap:wrap">
+        <img src="assets/kilra-today.png" alt="Kilra home screen with daily streak and quick log" style="height:clamp(300px,30vw,460px);width:auto;border-radius:20px;border:1px solid rgba(0,0,0,.08)">
+        <img src="assets/kilra-log.png" alt="Kilra logging a symptom or dose in ten seconds" style="height:clamp(300px,30vw,460px);width:auto;border-radius:20px;border:1px solid rgba(0,0,0,.08)">
+        <img src="assets/kilra-findings.png" alt="Kilra surfacing your real symptom triggers" style="height:clamp(300px,30vw,460px);width:auto;border-radius:20px;border:1px solid rgba(0,0,0,.08)">
+      </div>
+      <div style="margin-top:16px;font:11.5px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;color:#a1a1a6;text-align:center">daily log, learned triggers, habit streaks</div>
+    </div>
+  </section>
+
+  <section id="research" style="padding:clamp(108px,13vw,200px) 24px 0;max-width:1000px;margin:0 auto;text-align:center">
+    <h2 data-unravel style="margin:0;font-size:clamp(32px,4.6vw,64px);line-height:1;letter-spacing:-.035em;font-weight:600">Selected research</h2>
+    <div data-rule style="margin:44px auto 0;width:min(220px,40%);height:1px;background:rgba(0,0,0,.16);transform-origin:center"></div>
+  </section>
+
+  <section style="padding:clamp(70px,9vw,128px) 24px 0;max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(78px,10vw,145px)">
+    <div data-reveal data-entry style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,4.5vw,72px);align-items:center">
+      <div data-etext>
+        <div style="font:11.5px/1.3 ui-monospace,Menlo,monospace;letter-spacing:.12em;color:#a1a1a6">RESEARCH &#183; IEEE IECON 2026</div>
+        <h4 style="margin:20px 0 0;font-size:clamp(23px,2.7vw,38px);line-height:1.06;letter-spacing:-.03em;font-weight:600;text-wrap:balance">Safe Fast Charging Robust to Battery Aging</h4>
+        <div style="margin-top:14px;font-size:15.5px;color:#1d1d1f">1st Author</div>
+        <p style="margin:18px 0 0;font-size:16px;line-height:1.55;color:#6e6e73;max-width:34em;text-wrap:pretty">We built a solver-free safety filter for battery fast charging. Across 156 aged-cell tests at 56 microseconds per step it produced zero failures, where the standard approach failed every time. Accepted at IEEE IECON 2026 as first author.</p>
+      </div>
+      <div data-ethumb data-zoom style="border-radius:24px;overflow:hidden;border:1px solid rgba(0,0,0,.09);background:#ffffff">
+        <img src="assets/research-charging.svg" alt="Fast-charging safety: the solver-free filter holds cell stress under the limit while the baseline breaches it" style="width:100%;height:auto;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)">
+      </div>
+    </div>
+    <div data-reveal data-entry style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,4.5vw,72px);align-items:center">
+      <div data-etext>
+        <div style="font:11.5px/1.3 ui-monospace,Menlo,monospace;letter-spacing:.12em;color:#a1a1a6">RESEARCH &#183; GEORGE MASON ASSIP</div>
+        <h4 style="margin:20px 0 0;font-size:clamp(23px,2.7vw,38px);line-height:1.06;letter-spacing:-.03em;font-weight:600;text-wrap:balance">AI and crypto power use</h4>
+        <div style="margin-top:14px;font-size:15.5px;color:#1d1d1f">1st Author, Project Coordinator &#183; George Mason University, Costello College of Business, ASSIP</div>
+        <p style="margin:18px 0 0;font-size:16px;line-height:1.55;color:#6e6e73;max-width:34em;text-wrap:pretty">Modeled the power draw of AI data centers and crypto mining, and showed that it raises grid carbon unless the load runs on surplus renewables. The result held across eight demand models. Research under Dr. Jiasun Li, presented at the George Mason student conference, with publication ongoing.</p>
+      </div>
+      <div data-ethumb data-zoom style="border-radius:24px;overflow:hidden;border:1px solid rgba(0,0,0,.09);background:#ffffff">
+        <img src="assets/research-energy.svg" alt="Grid CO2 vs added AI and crypto load, rising under grid mix but flat on surplus renewables" style="width:100%;height:auto;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)">
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" style="padding:clamp(108px,13vw,200px) 24px 0;max-width:1000px;margin:0 auto;text-align:center">
+    <h2 data-unravel style="margin:0;font-size:clamp(32px,4.6vw,64px);line-height:1;letter-spacing:-.035em;font-weight:600">Projects</h2>
+    <div data-rule style="margin:44px auto 0;width:min(220px,40%);height:1px;background:rgba(0,0,0,.16);transform-origin:center"></div>
+  </section>
+
+  <section style="padding:clamp(70px,9vw,128px) 24px 0;max-width:1180px;margin:0 auto;text-align:center">
+    <h3 data-unravel style="margin:0 auto;max-width:20em;font-size:clamp(28px,4vw,54px);line-height:1.04;letter-spacing:-.035em;font-weight:600">FIREWATCH: computer vision based probabilistic wildfire tracking</h3>
+    <p data-reveal style="margin:30px auto 0;max-width:34em;font-size:clamp(16.5px,1.6vw,20px);line-height:1.55;color:#6e6e73;text-wrap:pretty">Built a system that fuses camera, satellite, weather and terrain into a continuously self-correcting probabilistic spread forecast, then turns it into human-in-the-loop evacuation and resource decisions. Validated it by replaying five real fires against GOES ground truth.</p>
+    <div data-reveal style="margin-top:36px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#86868b">Python &#183; PyTorch &#183; YOLO detector &#183; Data assimilation &#183; deck.gl</div>
+    <div data-reveal data-zoom style="margin-top:clamp(60px,7vw,110px);border-radius:32px;overflow:hidden;border:1px solid rgba(0,0,0,.09);box-shadow:0 2px 8px rgba(0,0,0,.05)">
+      <img src="assets/firewatch-parkfire.png" alt="FIREWATCH running on the 2024 Park Fire: GOES-18 detection, spread forecast, and community evacuation flag" style="width:100%;height:auto;transition:transform .8s cubic-bezier(.2,.7,.2,1)">
+    </div>
+    <div data-reveal style="margin-top:18px;font:11.5px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;color:#a1a1a6">observe &#183; map &#183; decide, driven entirely by public data</div>
+
+  </section>
+
+  <section style="padding:clamp(46px,6vw,84px) 24px 0;max-width:1180px;margin:0 auto;text-align:center">
+    <div data-reveal style="display:flex;justify-content:center;gap:18px;flex-wrap:wrap">
+      <a href="https://keshavkrishnan08.github.io/firewatch/" target="_blank" rel="noopener" data-arrow style="display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:999px;background:#1d1d1f;color:#fff;font-size:15px">View the live site <span data-arrowtip style="display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1)">&#8594;</span></a>
+      <a href="https://github.com/keshavkrishnan08/firewatch" target="_blank" rel="noopener" data-arrow style="display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:999px;border:1px solid rgba(0,0,0,.16);color:#1d1d1f;font-size:15px">GitHub repo <span data-arrowtip style="display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1)">&#8594;</span></a>
+    </div>
+  </section>
+
+  <section style="padding:clamp(96px,12vw,175px) 24px 0;max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(78px,10vw,145px)">
+    <div data-reveal data-entry style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,4.5vw,72px);align-items:center">
+      <div data-etext>
+        <div style="font:11.5px/1.3 ui-monospace,Menlo,monospace;letter-spacing:.12em;color:#a1a1a6">LIVE DEMO &#183; OPEN SOURCE</div>
+        <h4 style="margin:20px 0 0;font-size:clamp(23px,2.7vw,38px);line-height:1.06;letter-spacing:-.03em;font-weight:600;text-wrap:balance">CROSSING: computer vision based pedestrian-vehicle safety intelligence</h4>
+        <div style="margin-top:14px;font-size:15.5px;color:#1d1d1f">Creator</div>
+        <p style="margin:18px 0 0;font-size:16px;line-height:1.55;color:#6e6e73;max-width:34em;text-wrap:pretty">Built a system that watches ordinary street video, models every person, vehicle, and interaction in the scene, and predicts who a vehicle is about to hit. A learned interaction model beats an engineered time-to-collision score at forecasting near-misses (0.95 AUROC), holds its calibration, and flags a pedestrian&#8217;s intent to cross roughly 2.8 seconds before they step into the road.</p>
+        <div style="margin-top:18px">
+          <a href="https://crossing-pi.vercel.app" target="_blank" rel="noopener" data-arrow style="font-size:15px;display:inline-flex;align-items:center;gap:9px">View the live site <span data-arrowtip style="display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1)">&#8594;</span></a>
+          <a href="https://github.com/keshavkrishnan08/ProjectCROSSING" target="_blank" rel="noopener" data-arrow style="font-size:15px;display:inline-flex;align-items:center;gap:9px;margin-left:26px">GitHub repo <span data-arrowtip style="display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1)">&#8594;</span></a>
+        </div>
+      </div>
+      <div data-ethumb data-zoom style="border-radius:24px;overflow:hidden;border:1px solid rgba(0,0,0,.09);background:#faf9f7">
+        <img src="assets/crossing.jpg" alt="CROSSING detecting pedestrians and vehicles on real street video, each box painted by its probability of being hit" style="width:100%;height:auto;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)">
+      </div>
+    </div>
+    <div data-reveal data-entry style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,4.5vw,72px);align-items:center">
+      <div data-etext>
+        <div style="font:11.5px/1.3 ui-monospace,Menlo,monospace;letter-spacing:.12em;color:#a1a1a6">PATENT &#183; PROVISIONAL, 26 CLAIMS</div>
+        <h4 style="margin:20px 0 0;font-size:clamp(23px,2.7vw,38px);line-height:1.06;letter-spacing:-.03em;font-weight:600;text-wrap:balance">Forecasting crop waste across the U.S. supply chain</h4>
+        <div style="margin-top:14px;font-size:15.5px;color:#1d1d1f">Inventor</div>
+        <p style="margin:18px 0 0;font-size:16px;line-height:1.55;color:#6e6e73;max-width:34em;text-wrap:pretty">Built a graph neural network that forecasts supply-chain-driven crop waste across 2,130 US counties by routing inter-regional economic shocks through a cascade diffusion model. Filed as a provisional patent with 26 claims.</p>
+        <a href="https://github.com/keshavkrishnan08/CasCrop" target="_blank" rel="noopener" data-arrow style="margin-top:18px;font-size:15px;display:inline-flex;align-items:center;gap:9px">GitHub repo <span data-arrowtip style="display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1)">&#8594;</span></a>
+      </div>
+      <div data-ethumb data-zoom style="border-radius:28px;overflow:hidden;border:1px solid rgba(0,0,0,.09);aspect-ratio:4/5;min-height:clamp(340px,38vw,560px);background-color:#f5f5f7;background-image:repeating-linear-gradient(135deg,rgba(0,0,0,.045) 0 1px,transparent 1px 11px);display:flex;align-items:center;justify-content:center">
+        <img src="assets/crop-county.svg" alt="County-level cascade-diffusion crop-waste risk across the United States" style="width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)">
+      </div>
+    </div>
+  </section>
+
+  <section id="cv" style="padding:clamp(118px,14vw,210px) 24px 0;max-width:1000px;margin:0 auto;text-align:center">
+    <h2 data-unravel style="margin:0;font-size:clamp(32px,4.6vw,64px);line-height:1;letter-spacing:-.035em;font-weight:600">Selected CV</h2>
+    <div data-rule style="margin:44px auto 0;width:min(220px,40%);height:1px;background:rgba(0,0,0,.16);transform-origin:center"></div>
+  </section>
+
+  <section style="padding:clamp(70px,9vw,128px) 24px 0;max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(78px,10vw,145px)">
+    <div data-reveal data-entry style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,4.5vw,72px);align-items:center">
+      <div data-etext>
+        <div style="font:11.5px/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;color:#a1a1a6">01</div>
+        <h4 style="margin:20px 0 0;font-size:clamp(23px,2.7vw,38px);line-height:1.06;letter-spacing:-.03em;font-weight:600;text-wrap:balance">EP Industrial Coatings</h4>
+        <div style="margin-top:14px;font-size:15.5px;color:#1d1d1f">Operations &amp; Engineering Intern (paid)</div>
+        <p style="margin:18px 0 0;font-size:16px;line-height:1.55;color:#6e6e73;max-width:34em;text-wrap:pretty">Built a computer-vision quoting tool that cut quote turnaround from two weeks to five minutes at better than 90 percent accuracy, and wrote five company-wide SOPs over a five-month term.</p>
+      </div>
+      <div data-ethumb data-zoom style="border-radius:28px;overflow:hidden;border:1px solid rgba(0,0,0,.09);aspect-ratio:4/5;min-height:clamp(340px,38vw,560px);background-color:#f5f5f7;background-image:repeating-linear-gradient(135deg,rgba(0,0,0,.045) 0 1px,transparent 1px 11px);display:flex;align-items:center;justify-content:center">
+        <img src="assets/ep-coatings.jpg" alt="Enviropeel industrial anti-corrosion coating applied to machinery" style="width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)">
+      </div>
+    </div>
+    <div data-reveal data-entry style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,4.5vw,72px);align-items:center">
+      <div data-etext>
+        <div style="font:11.5px/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;color:#a1a1a6">02</div>
+        <h4 style="margin:20px 0 0;font-size:clamp(23px,2.7vw,38px);line-height:1.06;letter-spacing:-.03em;font-weight:600;text-wrap:balance">Park Tudor VEX Robotics: Team 6842V Vicious Vortex</h4>
+        <div style="margin-top:14px;font-size:15.5px;color:#1d1d1f">Captain, Programmer, Strategy Design</div>
+        <p style="margin:18px 0 0;font-size:16px;line-height:1.55;color:#6e6e73;max-width:34em;text-wrap:pretty">Captained a six-person team to eight international placements and the most wins in the world across the 2024 and 2025 seasons, with more than 20 awards. Built our autonomy stack in C++: Monte Carlo localization, pure-pursuit path following over B&#233;zier curves, and vision sensing. Also mentored the middle school team to a state title.</p>
+      </div>
+      <div data-ethumb data-zoom style="border-radius:28px;overflow:hidden;border:1px solid rgba(0,0,0,.09);aspect-ratio:4/5;min-height:clamp(340px,38vw,560px);background-color:#f5f5f7;background-image:repeating-linear-gradient(135deg,rgba(0,0,0,.045) 0 1px,transparent 1px 11px);display:flex;align-items:center;justify-content:center">
+        <img src="assets/robotics.svg" alt="Autonomy diagram: Monte Carlo localization particles and pure-pursuit lookahead over a Bezier path" style="width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)">
+      </div>
+    </div>
+    <div data-reveal data-entry style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,4.5vw,72px);align-items:center">
+      <div data-etext>
+        <div style="font:11.5px/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;color:#a1a1a6">03</div>
+        <h4 style="margin:20px 0 0;font-size:clamp(23px,2.7vw,38px);line-height:1.06;letter-spacing:-.03em;font-weight:600;text-wrap:balance">VolunteerU</h4>
+        <div style="margin-top:14px;font-size:15.5px;color:#1d1d1f">Cofounder</div>
+        <p style="margin:18px 0 0;font-size:16px;line-height:1.55;color:#6e6e73;max-width:34em;text-wrap:pretty">Cofounded a free platform that helps people launch and manage a nonprofit end to end, and helps volunteers find opportunities that actually fit them. The workspace keeps applications, roster, attendance, and verified hours in one place, so a coordinator can accept a volunteer, take attendance, and have their hours post to every record the same day.</p>
+        <a href="https://volunteeruapp.com" target="_blank" rel="noopener" data-arrow style="margin-top:18px;font-size:15px;display:inline-flex;align-items:center;gap:9px">volunteeruapp.com <span data-arrowtip style="display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1)">&#8594;</span></a>
+      </div>
+      <div data-ethumb data-zoom style="border-radius:24px;overflow:hidden;border:1px solid rgba(0,0,0,.09);background:#faf9f7">
+        <img src="assets/volunteeru.png" alt="VolunteerU workspace: applications, roster, attendance and verified hours in one place" style="width:100%;height:auto;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)">
+      </div>
+    </div>
+    <div data-reveal data-entry style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,4.5vw,72px);align-items:center">
+      <div data-etext>
+        <div style="font:11.5px/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;color:#a1a1a6">04</div>
+        <h4 style="margin:20px 0 0;font-size:clamp(23px,2.7vw,38px);line-height:1.06;letter-spacing:-.03em;font-weight:600;text-wrap:balance">Mock Trial</h4>
+        <div style="margin-top:14px;font-size:15.5px;color:#1d1d1f">Cofounder &amp; President</div>
+        <p style="margin:18px 0 0;font-size:16px;line-height:1.55;color:#6e6e73;max-width:34em;text-wrap:pretty">Cofounded and lead Park Tudor&#8217;s mock trial program, growing it from the ground up to 140 members. Ran the school&#8217;s first bipartisan roundtable, bringing four state and national officials in front of a 50+ audience, took the team to districts, and earned an Outstanding Witness award.</p>
+      </div>
+      <div data-ethumb data-zoom style="border-radius:24px;overflow:hidden;border:1px solid rgba(0,0,0,.09);background:#faf9f7">
+        <img src="assets/mock-trial.jpg" alt="Park Tudor bipartisan roundtable with four state and national officials" style="width:100%;height:auto;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)">
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" style="padding:clamp(108px,13vw,200px) 24px 0;max-width:1000px;margin:0 auto;text-align:center">
+    <h2 data-unravel style="margin:0;font-size:clamp(32px,4.6vw,64px);line-height:1;letter-spacing:-.035em;font-weight:600">Familiar with</h2>
+    <div data-rule style="margin:44px auto 0;width:min(220px,40%);height:1px;background:rgba(0,0,0,.16);transform-origin:center"></div>
+  </section>
+
+  <section style="padding:clamp(56px,7vw,104px) 24px clamp(96px,12vw,170px);max-width:1000px;margin:0 auto">
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(28px,3.2vw,52px);text-align:left">
+      <div>
+        <div style="font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#86868b;padding-bottom:16px;border-bottom:1px solid rgba(0,0,0,.1)">Languages</div>
+        <div style="margin-top:20px;display:flex;flex-direction:column;gap:11px">
+          <div style="font-size:16px;letter-spacing:-.01em">Python</div>
+          <div style="font-size:16px;letter-spacing:-.01em">C++</div>
+          <div style="font-size:16px;letter-spacing:-.01em">Java</div>
+          <div style="font-size:16px;letter-spacing:-.01em">TypeScript, JavaScript</div>
+          <div style="font-size:16px;letter-spacing:-.01em">Swift</div>
+          <div style="font-size:16px;letter-spacing:-.01em">SQL</div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#86868b;padding-bottom:16px;border-bottom:1px solid rgba(0,0,0,.1)">Machine learning &amp; research</div>
+        <div style="margin-top:20px;display:flex;flex-direction:column;gap:11px">
+          <div style="font-size:16px;letter-spacing:-.01em">PyTorch</div>
+          <div style="font-size:16px;letter-spacing:-.01em">NumPy</div>
+          <div style="font-size:16px;letter-spacing:-.01em">scikit-learn</div>
+          <div style="font-size:16px;letter-spacing:-.01em">pandas, SciPy</div>
+          <div style="font-size:16px;letter-spacing:-.01em">Data assimilation, particle filters</div>
+          <div style="font-size:16px;letter-spacing:-.01em">YOLO, SAM2</div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#86868b;padding-bottom:16px;border-bottom:1px solid rgba(0,0,0,.1)">Agentic &amp; applied AI</div>
+        <div style="margin-top:20px;display:flex;flex-direction:column;gap:11px">
+          <div style="font-size:16px;letter-spacing:-.01em">Agentic AI systems</div>
+          <div style="font-size:16px;letter-spacing:-.01em">Prompt engineering</div>
+          <div style="font-size:16px;letter-spacing:-.01em">LLM application development</div>
+          <div style="font-size:16px;letter-spacing:-.01em">Retrieval-augmented generation</div>
+          <div style="font-size:16px;letter-spacing:-.01em">Fine-tuning &amp; evaluation</div>
+          <div style="font-size:16px;letter-spacing:-.01em">Tool use &amp; function calling</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" style="padding:clamp(108px,13vw,195px) 24px clamp(60px,6vw,80px);background:#1d1d1f;color:#f5f5f7;text-align:center">
+    <div style="max-width:1300px;margin:0 auto">
+      <h2 data-unravel style="margin:0;font-size:clamp(34px,7.4vw,112px);line-height:.98;letter-spacing:-.045em;font-weight:600">Let&#8217;s build something.</h2>
+      <div data-reveal style="margin-top:clamp(30px,3.6vw,52px)">
+        <a href="mailto:keshav-krishnan@outlook.com?subject=Complete%20CV%20request" data-arrow style="display:inline-flex;align-items:center;gap:9px;padding:14px 28px;border-radius:999px;border:1px solid rgba(255,255,255,.24);color:#f5f5f7;font-size:15px;font-weight:500">Request my complete CV <span data-arrowtip style="display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1)">&#8594;</span></a>
+      </div>
+      <div data-reveal style="margin-top:clamp(48px,6vw,86px);display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(24px,4vw,60px)">
+        <a href="mailto:keshav-krishnan@outlook.com" data-arrow style="color:#f5f5f7;font-size:17px;display:inline-flex;align-items:center;gap:9px">Email <span data-arrowtip style="display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1)">&#8594;</span></a>
+        <a href="https://github.com/keshavkrishnan08" target="_blank" rel="noopener" data-arrow style="color:#f5f5f7;font-size:17px;display:inline-flex;align-items:center;gap:9px">GitHub <span data-arrowtip style="display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1)">&#8594;</span></a>
+        <a href="https://www.linkedin.com/in/keshav-krishnan-897394356/" target="_blank" rel="noopener" data-arrow style="color:#f5f5f7;font-size:17px;display:inline-flex;align-items:center;gap:9px">LinkedIn <span data-arrowtip style="display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1)">&#8594;</span></a>
+      </div>
+      <div style="margin-top:clamp(72px,9vw,130px);font-size:12.5px;color:#6e6e73">&#169; 2026 Keshav</div>
+    </div>
+  </footer>
+</main>
+
+<script>
+/* Scroll interactions: reveal, word unravel, slide and image zoom on enter.
+   Vanilla JS, no framework or runtime, so the page is a single static file. */
+(function () {
+  var app = {
+    _io: null, _probe: null, _onScroll: null, _motion: false, _armed: false,
+
+    wire: function () {
+      const root = document.body;
+
+      if (!this._io) {
+        root.querySelectorAll("[data-m]:not([data-played])").forEach((el) => {
+          el.style.opacity = "";
+          el.style.transform = "";
+          el.querySelectorAll("span[data-w]").forEach((s) => { s.style.opacity = ""; });
+        });
+      }
+
+      root.querySelectorAll("[data-entry]").forEach((el, i) => {
+        const text = el.querySelector("[data-etext]");
+        const thumb = el.querySelector("[data-ethumb]");
+        if (!text || !thumb) return;
+        const flip = i % 2 === 1;
+        text.style.order = flip ? "2" : "1";
+        thumb.style.order = flip ? "1" : "2";
+        text.style.textAlign = flip ? "right" : "left";
+        text.querySelectorAll("p").forEach((p) => { p.style.marginLeft = flip ? "auto" : "0"; });
+        text.dataset.slide = flip ? "R" : "L";
+        thumb.dataset.slide = flip ? "L" : "R";
+      });
+
+      root.querySelectorAll("[data-zoom]:not([data-hov])").forEach((el) => {
+        el.dataset.hov = "1";
+        const img = el.querySelector("img");
+        el.addEventListener("mouseenter", () => { if (img) img.style.transform = "scale(1.03)"; });
+        el.addEventListener("mouseleave", () => { if (img) img.style.transform = "none"; });
+      });
+
+      root.querySelectorAll("[data-arrow]:not([data-hov])").forEach((el) => {
+        el.dataset.hov = "1";
+        const tip = el.querySelector("[data-arrowtip]");
+        if (!tip) return;
+        el.addEventListener("mouseenter", () => { tip.style.transform = "translateX(4px)"; });
+        el.addEventListener("mouseleave", () => { tip.style.transform = "none"; });
+      });
+
+      if (!this._probe && typeof IntersectionObserver === "function") {
+        this._probe = new IntersectionObserver(() => {
+          this._probe.disconnect();
+          this._probe = null;
+          this.enableMotion();
+        });
+        this._probe.observe(root);
+      } else if (this._motion) {
+        this.enableMotion();
+      }
+
+      if (!this._onScroll) {
+        this._onScroll = () => {
+          const hero = document.querySelector("[data-hero-inner]");
+          if (!hero) return;
+          const y = Math.min(window.scrollY, 900);
+          hero.style.transform = "translateY(" + (-y * 0.2).toFixed(1) + "px) scale(" + (1 - y * 0.00012).toFixed(4) + ")";
+          hero.style.opacity = String(Math.max(0, 1 - y / 780));
+          document.querySelectorAll("[data-m]:not([data-played])").forEach((el) => {
+            if (el.getBoundingClientRect().top < window.innerHeight * 0.99) this.play(el);
+          });
+        };
+        window.addEventListener("scroll", this._onScroll, { passive: true });
+        this._onScroll();
+      }
+    },
+
+    enableMotion: function () {
+      this._motion = true;
+      const root = document.body;
+      const io = this._io || (this._io = new IntersectionObserver((es) => {
+        es.forEach((e) => {
+          if (e.isIntersecting) { this.play(e.target); this._io.unobserve(e.target); }
+        });
+      }, { rootMargin: "0px 0px 0% 0px", threshold: 0.01 }));
+
+      root.querySelectorAll("[data-unravel]:not([data-split])").forEach((el) => {
+        el.dataset.split = "1";
+        const words = (el.textContent || "").split(/\s+/).filter(Boolean);
+        el.textContent = "";
+        words.forEach((w, i) => {
+          const s = document.createElement("span");
+          s.textContent = w;
+          s.style.display = "inline-block";
+          s.style.willChange = "transform,filter,opacity";
+          s.dataset.w = String(i);
+          el.appendChild(s);
+          if (i < words.length - 1) el.appendChild(document.createTextNode(" "));
+        });
+      });
+
+      const pending = [];
+      root.querySelectorAll("[data-reveal]:not([data-m]),[data-unravel]:not([data-m]),[data-rule]:not([data-m])").forEach((el) => {
+        el.dataset.m = "1";
+        if (el.getBoundingClientRect().top < window.innerHeight * 0.97) this.play(el);
+        else pending.push(el);
+      });
+
+      if (!pending.length || this._armed) return;
+      this._armed = true;
+      const arm = () => {
+        window.removeEventListener("scroll", arm);
+        pending.forEach((el) => {
+          if (el.dataset.played) return;
+          if (el.getBoundingClientRect().top < window.innerHeight * 0.99) { this.play(el); return; }
+          if (el.hasAttribute("data-unravel")) el.querySelectorAll("span[data-w]").forEach((s) => { s.style.opacity = "0"; });
+          else if (el.hasAttribute("data-rule")) el.style.transform = "scaleX(0)";
+          else el.style.opacity = "0";
+          io.observe(el);
+        });
+      };
+      window.addEventListener("scroll", arm, { passive: true, once: true });
+    },
+
+    play: function (el) {
+      if (el.dataset.played) return;
+      el.dataset.played = "1";
+      if (el.hasAttribute("data-unravel")) {
+        el.querySelectorAll("span[data-w]").forEach((s, i) => {
+          s.style.opacity = "";
+          s.style.animation = "omWord 0.98s cubic-bezier(.16,.84,.28,1) both";
+          s.style.animationDelay = (i * 0.056).toFixed(3) + "s";
+        });
+        return;
+      }
+      if (el.hasAttribute("data-rule")) {
+        el.style.transform = "";
+        el.style.animation = "omLine 1.0s cubic-bezier(.16,.84,.28,1) .06s both";
+        return;
+      }
+      el.style.opacity = "";
+      const sides = el.querySelectorAll("[data-slide]");
+      if (sides.length) {
+        sides.forEach((c, i) => {
+          c.style.animation = (c.dataset.slide === "L" ? "omInL" : "omInR") + " 1.15s cubic-bezier(.16,.84,.28,1) both";
+          c.style.animationDelay = (i * 0.09).toFixed(2) + "s";
+        });
+        return;
+      }
+      if (el.hasAttribute("data-bars") || el.querySelector("[data-bar]")) {
+        el.querySelectorAll("[data-bar]").forEach((b, i) => {
+          b.style.animation = "omBar 0.9s cubic-bezier(.16,.84,.28,1) both";
+          b.style.animationDelay = (i * 0.06).toFixed(2) + "s";
+        });
+      }
+      if (el.hasAttribute("data-zoom")) {
+        el.style.animation = "omImg 1.35s cubic-bezier(.16,.84,.28,1) both";
+        return;
+      }
+      el.style.animation = "omUp 1.05s cubic-bezier(.16,.84,.28,1) both";
+    }
+  };
+
+  /* style-hover attribute: on hover, swap in the listed CSS declarations, restore on leave. */
+  function initStyleHover() {
+    document.querySelectorAll("[style-hover]").forEach((el) => {
+      const decls = el.getAttribute("style-hover").split(";").map((s) => s.trim()).filter(Boolean).map((s) => {
+        const i = s.indexOf(":");
+        return [s.slice(0, i).trim(), s.slice(i + 1).trim()];
+      });
+      const prev = decls.map(([p]) => [p, el.style.getPropertyValue(p)]);
+      el.addEventListener("mouseenter", () => decls.forEach(([p, v]) => el.style.setProperty(p, v)));
+      el.addEventListener("mouseleave", () => prev.forEach(([p, v]) => el.style.setProperty(p, v)));
+    });
+  }
+
+  function boot() { app.wire(); initStyleHover(); }
+  if (document.readyState !== "loading") boot();
+  else document.addEventListener("DOMContentLoaded", boot);
+})();
+</script>
+<style>
+#mdBtn{position:fixed;top:18px;right:18px;z-index:90;font:500 12px/1 -apple-system,BlinkMacSystemFont,Inter,sans-serif;letter-spacing:.02em;color:#1d1d1f;background:rgba(255,255,255,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border:1px solid rgba(0,0,0,.09);border-radius:999px;padding:9px 13px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;box-shadow:0 1px 12px rgba(0,0,0,.05)}
+#mdBtn:hover{border-color:rgba(0,0,0,.28)}
+#mdOverlay{position:fixed;inset:0;z-index:200;display:none;background:rgba(20,20,30,.38);align-items:center;justify-content:center;padding:24px}
+#mdOverlay.open{display:flex}
+#mdPanel{background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:20px;max-width:820px;width:100%;max-height:82vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 24px 70px -20px rgba(0,0,0,.45)}
+#mdHead{display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid rgba(0,0,0,.08)}
+#mdHead b{font:600 14px/1 -apple-system,BlinkMacSystemFont,Inter,sans-serif;letter-spacing:-.01em;flex:1}
+#mdHead button{font:500 13px/1 -apple-system,BlinkMacSystemFont,Inter,sans-serif;border:1px solid rgba(0,0,0,.14);background:#fff;border-radius:9px;padding:8px 13px;cursor:pointer}
+#mdHead #mdCopy{background:#1d1d1f;color:#fff;border-color:#1d1d1f}
+#mdBody{margin:0;padding:20px 22px;overflow:auto;font:13px/1.62 ui-monospace,SFMono-Regular,Menlo,monospace;color:#1d1d1f;white-space:pre-wrap;word-wrap:break-word}
+@media (max-width:520px){#mdBtn{top:auto;bottom:16px;right:16px}}
+</style>
+<button id="mdBtn" onclick="document.getElementById('mdOverlay').classList.add('open')" aria-label="View this page as Markdown">&#9776; Markdown</button>
+<div id="mdOverlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div id="mdPanel" role="dialog" aria-label="Page as Markdown">
+    <div id="mdHead"><b>This page as Markdown</b><button id="mdCopy">Copy</button><button id="mdClose">Close</button></div>
+    <pre id="mdBody"># Keshav Krishnan
+
+I build AI products. A senior at Park Tudor School in Indianapolis, Indiana.
+
+I started coding at nine, following a YouTube HTML course to build a Facebook clone, and fell in love with programming. When my dad showed me ChatGPT in 2023, my focus shifted to building AI systems. More than the technology, though, my real passion is leading teams and sharing my ideas with the world, whether from a conference stage or around a small table. In my free time I'm a dedicated gymgoer (just hit 225 on bench press), a new runner training for a sub-1:55 half marathon, and a jazz musician (bass guitar on top!).
+
+## What I'm interested in
+
+In 1903, the New York Times argued that a working flying machine was a million years away. Sixty-nine days later, the Wright brothers flew; sixty-six years after that, we walked on the moon. Now that AI has made coding and knowledge almost free, I think humanity's next step is to reapportion that freed-up ambition toward log-linear, outsized results. The startups that matter shouldn't chase small things; they should take on the audacious ones, energy, physical intelligence, even interstellar travel, that today feel inconceivable.
+
+## Startup
+
+### Kilra: Digital Health OS
+Founder, CEO. I built and lead the product end to end, from the custom ML models to the AI-driven growth. People log symptoms, medications, sleep, and stress, and Kilra learns how their body reacts, surfacing the real triggers behind how they feel, so they can adjust their lifestyle quickly instead of waiting on expensive, drawn-out doctor visits.
+- $10K annualized revenue
+- iOS, live on the App Store: https://apps.apple.com/us/app/kilra-symptom-tracker/id6760767331
+
+## Selected research
+
+### Safe Fast Charging Robust to Battery Aging
+1st Author (IEEE IECON 2026). We built a solver-free safety filter for battery fast charging. Across 156 aged-cell tests at 56 microseconds per step it produced zero failures, where the standard approach failed every time. Accepted at IEEE IECON 2026 as first author.
+
+### AI and crypto power use
+1st Author, Project Coordinator, George Mason University, Costello College of Business (ASSIP). Modeled the power draw of AI data centers and crypto mining, and showed that it raises grid carbon unless the load runs on surplus renewables. The result held across eight demand models. Research under Dr. Jiasun Li, presented at the George Mason student conference, with publication ongoing.
+
+## Projects
+
+### FIREWATCH: computer vision based probabilistic wildfire tracking
+Built a system that fuses camera, satellite, weather and terrain into a continuously self-correcting probabilistic spread forecast, then turns it into human-in-the-loop evacuation and resource decisions. Validated it by replaying five real fires against GOES ground truth.
+- Tech: Python, PyTorch, YOLO detector, data assimilation, deck.gl
+- Live site: https://keshavkrishnan08.github.io/firewatch/
+- GitHub: https://github.com/keshavkrishnan08/firewatch
+
+### CROSSING: computer vision based pedestrian-vehicle safety intelligence
+Built a system that watches ordinary street video, models every person, vehicle, and interaction in the scene, and predicts who a vehicle is about to hit. A learned interaction model beats an engineered time-to-collision score at forecasting near-misses (0.95 AUROC), holds its calibration, and flags a pedestrian's intent to cross roughly 2.8 seconds before they step into the road.
+- Tech: Python, YOLOv3, multi-object tracking, trajectory forecasting, FastAPI
+- Live site: https://crossing-pi.vercel.app
+- GitHub: https://github.com/keshavkrishnan08/ProjectCROSSING
+
+### Forecasting crop waste across the U.S. supply chain
+Inventor (provisional patent, 26 claims). Built a graph neural network that forecasts supply-chain-driven crop waste across 2,130 US counties by routing inter-regional economic shocks through a cascade diffusion model.
+- GitHub: https://github.com/keshavkrishnan08/CasCrop
+
+## Selected CV
+
+### EP Industrial Coatings
+Operations &amp; Engineering Intern (paid). Built a computer-vision quoting tool that cut quote turnaround from two weeks to five minutes at better than 90 percent accuracy, and wrote five company-wide SOPs over a five-month term.
+
+### Park Tudor VEX Robotics: Team 6842V Vicious Vortex
+Captain, Programmer, Strategy Design. Captained a six-person team to eight international placements and the most wins in the world across the 2024 and 2025 seasons, with more than 20 awards. Built our autonomy stack in C++: Monte Carlo localization, pure-pursuit path following over Bezier curves, and vision sensing. Also mentored the middle school team to a state title.
+
+### VolunteerU
+Cofounder. Cofounded a free platform that helps people launch and manage a nonprofit end to end, and helps volunteers find opportunities that actually fit them. The workspace keeps applications, roster, attendance, and verified hours in one place. https://volunteeruapp.com
+
+### Mock Trial
+Cofounder &amp; President. Cofounded and lead Park Tudor's mock trial program, growing it from the ground up to 140 members. Ran the school's first bipartisan roundtable, bringing four state and national officials in front of a 50+ audience, took the team to districts, and earned an Outstanding Witness award.
+
+## Familiar with
+
+- Languages: Python, C++, Java, TypeScript, JavaScript, Swift, SQL
+- Machine learning &amp; research: PyTorch, NumPy, scikit-learn, pandas, SciPy, data assimilation, particle filters, YOLO, SAM2
+- Agentic &amp; applied AI: agentic AI systems, prompt engineering, LLM application development, retrieval-augmented generation, fine-tuning &amp; evaluation, tool use &amp; function calling
+
+## Contact
+
+- Email: keshav-krishnan@outlook.com
+- GitHub: https://github.com/keshavkrishnan08
+- LinkedIn: https://www.linkedin.com/in/keshav-krishnan-897394356/
+</pre>
+  </div>
+</div>
+<script>
+(function(){
+  var ov=document.getElementById('mdOverlay'), c=document.getElementById('mdCopy'), body=document.getElementById('mdBody');
+  c.onclick=function(){ navigator.clipboard.writeText(body.textContent).then(function(){ c.textContent='Copied \u2713'; setTimeout(function(){c.textContent='Copy';},1500); }); };
+  document.getElementById('mdClose').onclick=function(){ ov.classList.remove('open'); };
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') ov.classList.remove('open'); });
+})();
+</script>
+
+</body>
+</html>
