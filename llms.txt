@@ -8,12 +8,16 @@ I started coding at nine, following a YouTube HTML course to build a Facebook cl
 
 In 1903, the New York Times argued that a working flying machine was a million years away. Sixty-nine days later, the Wright brothers flew; sixty-six years after that, we walked on the moon. Now that AI has made coding and knowledge almost free, I think humanity's next step is to reapportion that freed-up ambition toward log-linear, outsized results. The startups that matter shouldn't chase small things; they should take on the audacious ones, energy, physical intelligence, even interstellar travel, that today feel inconceivable.
 
-## Startup
+## Ventures
 
 ### Kilra: Digital Health OS
 Founder, CEO. I built and lead the product end to end, from the custom ML models to the AI-driven growth. People log symptoms, medications, sleep, and stress, and Kilra learns how their body reacts, surfacing the real triggers behind how they feel, so they can adjust their lifestyle quickly instead of waiting on expensive, drawn-out doctor visits.
 - $10K annualized revenue
 - iOS, live on the App Store: https://apps.apple.com/us/app/kilra-symptom-tracker/id6760767331
+
+### CropConnect
+Founder. Done-for-you local produce sourcing for restaurants. Independent kitchens keep three to five cents on every dollar and have already cut everything they can, so the only real lever left is charging more, and food from a named farm down the road is how they do it: the menu price moves, the food cost barely does, and that gap is almost pure profit. CropConnect runs the entire supply side, finding and vetting the farms and delivering every week, so the kitchen just cooks.
+- Live: https://cropconnect.dev
 
 ## Selected research
 
@@ -21,7 +25,8 @@ Founder, CEO. I built and lead the product end to end, from the custom ML models
 1st Author (IEEE IECON 2026). We built a solver-free safety filter for battery fast charging. Across 156 aged-cell tests at 56 microseconds per step it produced zero failures, where the standard approach failed every time. Accepted at IEEE IECON 2026 as first author.
 
 ### AI and crypto power use
-1st Author, Project Coordinator, George Mason University, Costello College of Business (ASSIP). Modeled the power draw of AI data centers and crypto mining, and showed that it raises grid carbon unless the load runs on surplus renewables. The result held across eight demand models. Research under Dr. Jiasun Li, presented at the George Mason student conference, with publication ongoing.
+1st Author, Project Coordinator, George Mason University, Costello College of Business (ASSIP). Modeled the power draw of AI data centers and crypto mining and showed that it raises grid carbon unless the load runs on surplus renewables, a result that held across eight demand models. Earlier in the program I stress-tested published bitcoin-mining emission claims against EIA generation data to see which ones held up. Research under Dr. Jiasun Li; presented at the George Mason student conference, with publication ongoing.
+- Screening analysis: https://github.com/keshavkrishnan08/bitcoin-mining-emissions
 
 ## Projects
 
@@ -36,6 +41,11 @@ Built a system that watches ordinary street video, models every person, vehicle,
 - Tech: Python, YOLOv3, multi-object tracking, trajectory forecasting, FastAPI
 - Live site: https://crossing-pi.vercel.app
 - GitHub: https://github.com/keshavkrishnan08/ProjectCROSSING
+
+### GridWatch: Indiana's data centers mapped against the power grid
+Creator. Built an interactive atlas that plots every proposed and existing data center in Indiana against the grid: megawatts, water use, IURC dockets, and a projected household bill impact, with every figure linked to the public filing it came from. It tracks 46 projects whose active capacity already adds up to roughly 12,600 MW, about 36% of Indiana's peak demand, on a grid that is still 61% coal. A 2020 to 2035 timeline scrubs the build-out and a transparent calculator turns filed costs into a projected bill.
+- Live: https://gridwatch-indiana.vercel.app
+- GitHub: https://github.com/keshavkrishnan08/GridWatch
 
 ### Forecasting crop waste across the U.S. supply chain
 Inventor (provisional patent, 26 claims). Built a graph neural network that forecasts supply-chain-driven crop waste across 2,130 US counties by routing inter-regional economic shocks through a cascade diffusion model.

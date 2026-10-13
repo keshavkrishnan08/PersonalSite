@@ -5,3 +5,6 @@ design-source/
 .DS_Store
 *.log
 .vercel
+
+# Private working notes, not part of the site
+APPLICATION-NOTES.md
