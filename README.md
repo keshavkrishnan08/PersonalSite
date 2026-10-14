@@ -1,67 +1,56 @@
 # PersonalSite
 
-**Keshav Krishnan's portfolio: five hand-written HTML pages, one stylesheet, no framework, and no build step. An animated about page up front, and four plain, type-only pages for work, projects, research, and awards.**
+**Keshav Krishnan's portfolio: seven hand-written HTML pages, one stylesheet, no framework, and no build step. Every page is plain type in a single centered column.**
 
 A portfolio is read once, quickly, often on a phone, by someone deciding whether to keep going. Most of
 that reader's questions are plain ones: what does this person do, what have they built, what have they
-published, what have they won. This site answers the first one with a full-bleed about page, and the
-rest the way a good CV does: a name, a role, one paragraph, a link, and nothing in the way.
+published, what have they won. This site answers the first one on the home page, and the
+rest the way a good CV does: a name, a role, a sentence or two, a link, and nothing in the way.
 
 Live site: **https://keshavkrishnan.vercel.app**
 
 ```
-/            index.html     about: hero, portrait, interests, contact (system type, scroll motion)
-/work        work.html      current and past roles, then skills
-/projects    projects.html  FIREWATCH, CROSSING, GridWatch, crop waste forecasting
-/research    research.html  paper, research in progress, patent
-/awards      awards.html    research, robotics, leadership
-             site.css       the shared tab bar and the inner-page type
-             vercel.json    clean URLs: /work serves work.html
+/                  index.html             name, bio, interests, contact links
+/entrepreneurship  entrepreneurship.html  Kilra, CropConnect, VolunteerU
+/research          research.html          paper, ongoing research, patent
+/projects          projects.html          FIREWATCH, CROSSING, GridWatch, skills
+/school            school.html            VEX Robotics, Mock Trial
+/work              work.html              EP Industrial Coatings, McDonald's
+/awards            awards.html            robotics, mock trial
+                   site.css               tab bar, column, type, colors
+                   vercel.json            clean URLs: /work serves work.html
 ```
 
 Say it once, plainly.
 
 ## The core idea
 
-1. **Two registers.** The about page keeps its large type, portrait, and scroll motion. Every other page
-   is text only, so the facts read at a glance and nothing animates between the reader and a link.
-2. **One column, one size.** Inner pages sit in a single 580 px column set in 15 px Helvetica Neue at a
-   1.6 line height. Section labels are 11 px uppercase with 0.08 em tracking. Entries hang: the name
-   starts at the margin and the description is indented beneath it. Links are underlined at 30%
-   opacity with a 3 px offset.
-3. **Nothing to build.** Static HTML and one stylesheet. Vercel serves `/work` from `work.html` through
-   `cleanUrls`, and every push to `main` deploys.
-
-## What it does
-
-| Page | What is on it |
-|---|---|
-| **Home** | Intro and portrait, "What I'm interested in," and a dark contact footer with email, GitHub, LinkedIn, and a CV request. A Markdown button opens the whole profile as copyable plain text. |
-| **Work** | Currently: Kilra, CropConnect, George Mason ASSIP, Park Tudor VEX Robotics, Mock Trial, VolunteerU. Previously: EP Industrial Coatings. Then the skills list. |
-| **Projects** | FIREWATCH, CROSSING, GridWatch, and crop waste forecasting, each with its stack and links to the live site and the code. |
-| **Research** | 1. Research papers (IEEE IECON 2026), 2. research in progress (George Mason ASSIP), 3. patents (a U.S. provisional application with 26 claims). |
-| **Awards** | Research, robotics, and leadership honors. |
+1. **One column, one voice.** Every page sits in a centered 580 px column on a warm off-white
+   (`#f1efe9`) with near-black text (`#14130f`) and a warm gray (`#6b675e`) for labels and inactive
+   tabs. Type is Helvetica Neue: 15 px at a 1.6 line height, with a 72 px name on the home page.
+2. **Organized by what a reader asks.** Companies, research, projects, school, jobs, and awards each
+   get their own tab, so nothing is buried under anything else.
+3. **Nothing to build.** Static HTML and one stylesheet. The inner pages come from one generator so
+   the tab bar and spacing never drift, Vercel serves `/work` from `work.html` through `cleanUrls`,
+   and every push to `main` deploys.
 
 ## How it works
 
-**Tab bar.** `site.css` defines one `.tabs` bar used on every page: 14 px links with 24 px gaps, muted
-until hovered, and the current page marked with `aria-current="page"` in the text color at weight 500.
-Below 420 px the gap tightens to 18 px so all five tabs stay on one line.
+**Tab bar.** `.tabs` is 14 px links with 20 px gaps, gray until hovered, with the current page marked
+by `aria-current="page"` in the text color at weight 500. It wraps to a second line on narrow phones.
 
-**Inner pages.** `body.doc` sets the column, type, and colors. `.group` spaces sections by 2.5 em,
-`.label` sets the small uppercase headings, `.entry` is the hanging-indent role or project with a
-`.desc` block indented 30 px further, `.pub` is a citation with a smaller muted `.meta` line, and `li`
-items indent 30 px with 0.75 em between them.
+**Inner pages.** `.group` spaces sections by 2.5 em and `.label` sets the small uppercase headings
+(11 px, 0.08 em tracking). An `.entry` puts the name and role on the first line and indents the
+description 30 px beneath it. Award items are plain list lines indented 30 px. Links are underlined
+at 30% opacity with a 3 px offset.
 
-**About page motion.** One script wires everything on `DOMContentLoaded`. Nothing is hidden until an
-IntersectionObserver probe confirms the page is live; then the two large headings split into words
-that settle in from a blur, the hero slides in from both sides, and blocks rise into place as they
-enter the viewport, each playing once. Readers who ask their system for reduced motion get no
-animation at all.
+**Home.** The name, a 480 px bio, a short interests section, and a row of 17 px line icons for
+LinkedIn, GitHub, a CV request, and email. A Markdown button opens the whole profile as copyable
+plain text.
 
-**Deploys.** The Vercel project is connected to this repository, so a push to `main` builds and
-serves the site at keshavkrishnan.vercel.app. `.vercelignore` is an allowlist: only the five pages,
-`site.css`, `llms.txt`, `vercel.json`, and `assets/` ship.
+**Deploys.** The Vercel project is connected to this repository, and keshavkrishnan.vercel.app is a
+project domain, so a push to `main` updates the live site. `.vercelignore` is an allowlist: only the
+pages, `site.css`, `llms.txt`, `vercel.json`, and `assets/` ship.
 
 ## Run it
 
@@ -70,24 +59,28 @@ python3 -m http.server 8787     # then open http://localhost:8787
 ```
 
 Locally, open inner pages by file name (`/work.html`); the extensionless URLs come from Vercel.
+To change an inner page, edit its content in `build.py` and run `python3 build.py`.
 
 ## Layout
 
 ```
-index.html       about page: markup, inline styles, motion script, Markdown overlay
-work.html        roles and skills
-projects.html    projects with links
-research.html    paper, research in progress, patent
-awards.html      honors
-site.css         tab bar and inner-page typography
-vercel.json      clean URLs
-llms.txt         the profile as Markdown for language models
-assets/          the portrait (also the link-preview image)
+index.html              home: name, bio, interests, contact icons, Markdown overlay
+entrepreneurship.html   companies
+research.html           paper, ongoing research, patent
+projects.html           projects and skills
+school.html             school involvement
+work.html               jobs
+awards.html             awards
+site.css                shared styles
+vercel.json             clean URLs
+llms.txt                the profile as Markdown for language models
+assets/                 the portrait used for link previews
+build.py                generates the six inner pages from one template
 ```
 
 ## Honesty
 
-* There is no dark mode. Every page uses one light palette by design.
+* There is no dark mode. Every page uses one warm light palette by design.
 * The profile text is maintained by hand in the pages, the Markdown overlay, and `llms.txt`. Nothing
   keeps them in sync.
 * Figures quoted on the site, such as revenue, research results, and awards, are not sourced in this

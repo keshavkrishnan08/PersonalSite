@@ -1,6 +1,8 @@
 # Ship only the site itself. Notes, design exports, and repo files stay out of the deploy.
 /*
 !/index.html
+!/entrepreneurship.html
+!/school.html
 !/work.html
 !/projects.html
 !/research.html

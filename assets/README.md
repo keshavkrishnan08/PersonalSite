@@ -2,4 +2,4 @@
 
 | File | What it is |
 |------|-----------|
-| `keshav.jpg` | Portrait on the home page, also the link-preview image for every page |
+| `keshav.jpg` | Portrait used as the link-preview image for every page |

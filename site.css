@@ -1,9 +1,9 @@
 /* Shared by every page: the tab bar. Inner pages also use the .doc typography below. */
 :root {
-  --text: #1d1d1f;
-  --muted: #6e6e73;
-  --bg: #ffffff;
-  --rule: rgba(29, 29, 31, 0.3);
+  --text: #14130f;
+  --muted: #6b675e;
+  --bg: #f1efe9;
+  --rule: rgba(20, 19, 15, 0.3);
   --type: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -11,7 +11,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px 24px;
+  gap: 8px 20px;
   padding: 24px 0 8px;
   font: 14px/1.6 var(--type);
 }
@@ -32,8 +32,8 @@ body.doc {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-body.doc ::selection { background: rgba(29, 29, 31, 0.15); }
-.doc .wrap { max-width: 580px; padding: 0 24px; }
+body.doc ::selection { background: rgba(20, 19, 15, 0.15); }
+.doc .wrap { box-sizing: border-box; max-width: 580px; margin: 0 auto; padding: 0 24px; }
 .doc main { padding: 48px 0 40px; }
 .doc p { margin: 0; }
 
@@ -73,6 +73,22 @@ body.doc ::selection { background: rgba(29, 29, 31, 0.15); }
 }
 .doc a.u:hover { opacity: 0.7; }
 
+/* Home */
+.doc main.home { padding: 80px 0 40px; }
+.home h1 {
+  margin: 0 0 20px;
+  font-size: clamp(44px, 12vw, 72px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+.home .bio { max-width: 480px; }
+.home .home-label { margin: 40px 0 1em; }
+.social { display: flex; gap: 20px; margin-top: 64px; }
+.social a { color: var(--muted); transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1); }
+.social a:hover { opacity: 0.7; }
+.social svg { display: block; width: 17px; height: 17px; }
+
 @media (max-width: 420px) {
-  .tabs { gap: 6px 18px; }
+  .tabs { gap: 6px 16px; }
 }
