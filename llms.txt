@@ -13,54 +13,67 @@ In 1903, the New York Times argued that a working flying machine was a million y
 ### Kilra: Digital Health OS
 Founder, CEO. I built and lead the product end to end, from the custom ML models to the AI-driven growth. People log symptoms, medications, sleep, and stress, and Kilra learns how their body reacts, surfacing the real triggers behind how they feel, so they can adjust their lifestyle quickly instead of waiting on expensive, drawn-out doctor visits.
 - $10K annualized revenue
+- Tech: Swift, SwiftUI, Core ML
 - iOS, live on the App Store: https://apps.apple.com/us/app/kilra-symptom-tracker/id6760767331
 
 ### CropConnect
 Founder. Done-for-you local produce sourcing for restaurants. Independent kitchens keep three to five cents on every dollar and have already cut everything they can, so the only real lever left is charging more, and food from a named farm down the road is how they do it: the menu price moves, the food cost barely does, and that gap is almost pure profit. CropConnect runs the entire supply side, finding and vetting the farms and delivering every week, so the kitchen just cooks.
+- Tech: Next.js, React, TypeScript, Tailwind CSS, Supabase, Stripe, Leaflet, Vercel
 - Live: https://cropconnect.dev
 
 ## Selected research
 
 ### Safe Fast Charging Robust to Battery Aging
 1st Author (IEEE IECON 2026). We built a solver-free safety filter for battery fast charging. Across 156 aged-cell tests at 56 microseconds per step it produced zero failures, where the standard approach failed every time. Accepted at IEEE IECON 2026 as first author.
+- Tech: Python, NumPy, PyBaMM (Doyle-Fuller-Newman model), OSQP and PPO-Lagrangian baselines
+- GitHub: https://github.com/keshavkrishnan08/safe-charge
 
-### AI and crypto power use
-1st Author, Project Coordinator, George Mason University, Costello College of Business (ASSIP). Modeled the power draw of AI data centers and crypto mining and showed that it raises grid carbon unless the load runs on surplus renewables, a result that held across eight demand models. Earlier in the program I stress-tested published bitcoin-mining emission claims against EIA generation data to see which ones held up. Research under Dr. Jiasun Li; presented at the George Mason student conference, with publication ongoing.
+### The Carbon Effect of Flexible Computing Loads: A Distribution-Free Theory of Dispatch, Investment, and Optimal Contracts
+1st Author, Project Coordinator, George Mason University, Costello College of Business (ASSIP). Modeled the power draw of AI data centers and crypto mining and showed that it raises grid carbon unless the load runs on surplus renewables, a result that held across eight demand models. Earlier in the program I stress-tested published bitcoin-mining emission claims against EIA generation data to see which ones held up. Research under Dr. Jiasun Li; presented at the George Mason student conference and published in the Journal of Student-Scientists' Research (2026).
+- Paper: https://journals.gmu.edu/jssr/article/view/5665
+- DOI: https://doi.org/10.13021/jssr2026.5665
+- Tech: Python, NumPy, SciPy, pandas, statsmodels, matplotlib
 - Screening analysis: https://github.com/keshavkrishnan08/bitcoin-mining-emissions
 
 ## Projects
 
 ### FIREWATCH: computer vision based probabilistic wildfire tracking
 Built a system that fuses camera, satellite, weather and terrain into a continuously self-correcting probabilistic spread forecast, then turns it into human-in-the-loop evacuation and resource decisions. Validated it by replaying five real fires against GOES ground truth.
-- Tech: Python, PyTorch, YOLO detector, data assimilation, deck.gl
+- Tech: Python, PyTorch, YOLO, RT-DETR, SAM 2, U-Net, OpenCV, Shapely, DuckDB, FastAPI, GOES-18 and HRRR data, React, TypeScript, deck.gl, MapLibre
 - Live site: https://keshavkrishnan08.github.io/firewatch/
 - GitHub: https://github.com/keshavkrishnan08/firewatch
 
 ### CROSSING: computer vision based pedestrian-vehicle safety intelligence
 Built a system that watches ordinary street video, models every person, vehicle, and interaction in the scene, and predicts who a vehicle is about to hit. A learned interaction model beats an engineered time-to-collision score at forecasting near-misses (0.95 AUROC), holds its calibration, and flags a pedestrian's intent to cross roughly 2.8 seconds before they step into the road.
-- Tech: Python, YOLOv3, multi-object tracking, trajectory forecasting, FastAPI
+- Tech: Python, YOLOv3 (ONNX Runtime), OpenCV, ByteTrack, Kalman filters, homography, NumPy GRU, scikit-learn, FastAPI
 - Live site: https://crossing-pi.vercel.app
 - GitHub: https://github.com/keshavkrishnan08/ProjectCROSSING
 
 ### GridWatch: Indiana's data centers mapped against the power grid
 Creator. Built an interactive atlas that plots every proposed and existing data center in Indiana against the grid: megawatts, water use, IURC dockets, and a projected household bill impact, with every figure linked to the public filing it came from. It tracks 76 projects across 32 counties whose active capacity already adds up to roughly 15,100 MW, about 43% of Indiana's peak demand, on a grid that is still 61% coal. A 2020 to 2035 timeline scrubs the build-out and a transparent calculator turns filed costs into a projected bill.
+- Tech: TypeScript, Vite, MapLibre GL, D3, Python, Overpass API, Vitest, Playwright
 - Live: https://gridwatch-indiana.vercel.app
 - GitHub: https://github.com/keshavkrishnan08/GridWatch
 
 ### Forecasting crop waste across the U.S. supply chain
 Inventor (provisional patent, 26 claims). Built a graph neural network that forecasts supply-chain-driven crop waste across 2,130 US counties by routing inter-regional economic shocks through a cascade diffusion model.
+- Tech: PyTorch, PyTorch Geometric, scikit-learn, XGBoost, statsmodels, GeoPandas, Google Earth Engine
 - GitHub: https://github.com/keshavkrishnan08/CasCrop
 
 ## Selected CV
 
 ### EP Industrial Coatings
 Operations & Engineering Intern (paid). Built a computer-vision quoting tool that cut quote turnaround from two weeks to five minutes at better than 90 percent accuracy, and wrote five company-wide SOPs over a five-month term.
+- Tech: Python, Flask, SQLAlchemy, PyTorch, CLIP and BLIP (Hugging Face Transformers), Pillow
+- GitHub: https://github.com/keshavkrishnan08/Enviropeel-Project
 
 ### Park Tudor VEX Robotics: Team 6842V Vicious Vortex
 Captain, Programmer, Strategy Design. Captained a six-person team to eight international placements and the most wins in the world across the 2024 and 2025 seasons, with more than 20 awards. Built our autonomy stack in C++: Monte Carlo localization, pure-pursuit path following over Bezier curves, and vision sensing. Also mentored the middle school team to a state title.
 
 ### VolunteerU
-Cofounder. Cofounded a free platform that helps people launch and manage a nonprofit end to end, and helps volunteers find opportunities that actually fit them. The workspace keeps applications, roster, attendance, and verified hours in one place. https://volunteeruapp.com
+Cofounder. Cofounded a free platform that helps people launch and manage a nonprofit end to end, and helps volunteers find opportunities that actually fit them. The workspace keeps applications, roster, attendance, and verified hours in one place.
+- Tech: Next.js, React, Supabase, PostHog
+- Live: https://volunteeruapp.com
 
 ### Mock Trial
 Cofounder & President. Cofounded and lead Park Tudor's mock trial program, growing it from the ground up to 140 members. Ran the school's first bipartisan roundtable, bringing four state and national officials in front of a 50+ audience, took the team to districts, and earned an Outstanding Witness award.
@@ -68,7 +81,9 @@ Cofounder & President. Cofounded and lead Park Tudor's mock trial program, growi
 ## Familiar with
 
 - Languages: Python, C++, Java, TypeScript, JavaScript, Swift, SQL
-- Machine learning & research: PyTorch, NumPy, scikit-learn, pandas, SciPy, data assimilation, particle filters, YOLO, SAM2
+- Machine learning & research: PyTorch, PyTorch Geometric, scikit-learn, XGBoost, NumPy, SciPy, pandas, statsmodels, data assimilation, Kalman and particle filters
+- Computer vision: YOLO, SAM 2, CLIP, OpenCV, ONNX Runtime
+- Apps: Next.js, React, FastAPI, Flask, Supabase, SwiftUI
 - Agentic & applied AI: agentic AI systems, prompt engineering, LLM application development, retrieval-augmented generation, fine-tuning & evaluation, tool use & function calling
 
 ## Contact

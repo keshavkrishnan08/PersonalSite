@@ -60,7 +60,7 @@ body.doc ::selection { background: rgba(20, 19, 15, 0.15); }
 /* Publication style entry */
 .doc .pub { padding-left: 30px; margin-bottom: 2.5em; }
 .doc .pub:last-child { margin-bottom: 0; }
-.doc .meta { display: block; font-size: 13px; color: var(--muted); }
+.doc .meta { display: block; margin-top: 0.35em; font-size: 13px; line-height: 1.5; color: var(--muted); }
 .doc .links { display: block; font-size: 13px; }
 .doc .links a + a { margin-left: 14px; }
 

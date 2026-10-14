@@ -24,26 +24,28 @@
     <a href="/projects" aria-current="page">Projects</a>
     <a href="/school">School</a>
     <a href="/work">Work</a>
-    <a href="/awards">Awards</a>
   </nav>
   <main>
     <section class="group">
       <p class="label spaced">Selected projects</p>
       <div class="entry">
         <span class="name">FIREWATCH</span>, wildfire tracking<br>
-        <span class="desc">Combines camera, satellite, weather, and terrain data into a forecast of where a wildfire will spread, and turns it into evacuation decisions a person approves.
+        <span class="desc">Combines camera, satellite, weather, and terrain data into a forecast of where a wildfire will spread, and turns it into evacuation decisions a person approves. Smoke detection feeds an ensemble of physics-based spread runs, a particle filter reweights them as new observations arrive, and a learned surrogate makes the forecast fast.
+          <span class="meta">Python, PyTorch, YOLO, RT-DETR, SAM 2, U-Net, OpenCV, Shapely, DuckDB, FastAPI, GOES-18 and HRRR data, React, TypeScript, deck.gl, MapLibre</span>
           <span class="links"><a class="u" href="https://keshavkrishnan08.github.io/firewatch/" target="_blank" rel="noopener">Live site</a><a class="u" href="https://github.com/keshavkrishnan08/firewatch" target="_blank" rel="noopener">GitHub</a></span>
         </span>
       </div>
       <div class="entry">
         <span class="name">CROSSING</span>, pedestrian safety<br>
-        <span class="desc">Watches ordinary street video and predicts which pedestrians a vehicle is about to hit, before anyone steps into the road.
+        <span class="desc">Watches ordinary street video and predicts which pedestrians a vehicle is about to hit, before anyone steps into the road. It detects and tracks every person and car, maps them onto the road in meters, and a recurrent network I wrote from scratch in NumPy estimates who is about to cross.
+          <span class="meta">Python, YOLOv3 (ONNX Runtime), OpenCV, ByteTrack, Kalman filters, homography, NumPy GRU, scikit-learn, FastAPI</span>
           <span class="links"><a class="u" href="https://crossing-pi.vercel.app" target="_blank" rel="noopener">Live site</a><a class="u" href="https://github.com/keshavkrishnan08/ProjectCROSSING" target="_blank" rel="noopener">GitHub</a></span>
         </span>
       </div>
       <div class="entry">
         <span class="name">GridWatch</span>, data centers and the power grid<br>
-        <span class="desc">An interactive map of every data center planned or running in Indiana, set against the power grid, with each figure linked to its public filing.
+        <span class="desc">An interactive map of every data center planned or running in Indiana, set against the power grid, with each figure linked to its public filing. A Python pipeline gathers the data from OpenStreetMap and public records, and a static TypeScript map adds a build-out timeline and a household bill calculator.
+          <span class="meta">TypeScript, Vite, MapLibre GL, D3, Python, Overpass API, Vitest, Playwright</span>
           <span class="links"><a class="u" href="https://gridwatch-indiana.vercel.app" target="_blank" rel="noopener">Live map</a><a class="u" href="https://github.com/keshavkrishnan08/GridWatch" target="_blank" rel="noopener">GitHub</a></span>
         </span>
       </div>
@@ -52,9 +54,12 @@
     <section class="group">
       <p class="label">Familiar with</p>
       <ul>
-        <li>Python, C++, Java, TypeScript, Swift, SQL</li>
-        <li>PyTorch, scikit-learn, NumPy, pandas, computer vision, data assimilation</li>
-        <li>Agentic AI systems, LLM applications, retrieval, fine-tuning, prompt engineering</li>
+        <li>Languages: Python, C++, Java, TypeScript, Swift, SQL</li>
+        <li>Machine learning: PyTorch, PyTorch Geometric, scikit-learn, XGBoost, NumPy, SciPy, pandas, statsmodels</li>
+        <li>Computer vision: YOLO, SAM 2, CLIP, OpenCV, ONNX Runtime</li>
+        <li>Estimation: Kalman and particle filters, data assimilation, Monte Carlo localization</li>
+        <li>Apps: Next.js, React, FastAPI, Flask, Supabase, SwiftUI</li>
+        <li>Applied AI: agentic systems, LLM applications, retrieval, fine-tuning, prompt engineering</li>
       </ul>
     </section>
   </main>
