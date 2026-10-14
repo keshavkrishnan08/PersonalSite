@@ -43,7 +43,7 @@ Built a system that watches ordinary street video, models every person, vehicle,
 - GitHub: https://github.com/keshavkrishnan08/ProjectCROSSING
 
 ### GridWatch: Indiana's data centers mapped against the power grid
-Creator. Built an interactive atlas that plots every proposed and existing data center in Indiana against the grid: megawatts, water use, IURC dockets, and a projected household bill impact, with every figure linked to the public filing it came from. It tracks 46 projects whose active capacity already adds up to roughly 12,600 MW, about 36% of Indiana's peak demand, on a grid that is still 61% coal. A 2020 to 2035 timeline scrubs the build-out and a transparent calculator turns filed costs into a projected bill.
+Creator. Built an interactive atlas that plots every proposed and existing data center in Indiana against the grid: megawatts, water use, IURC dockets, and a projected household bill impact, with every figure linked to the public filing it came from. It tracks 76 projects across 32 counties whose active capacity already adds up to roughly 15,100 MW, about 43% of Indiana's peak demand, on a grid that is still 61% coal. A 2020 to 2035 timeline scrubs the build-out and a transparent calculator turns filed costs into a projected bill.
 - Live: https://gridwatch-indiana.vercel.app
 - GitHub: https://github.com/keshavkrishnan08/GridWatch
 
