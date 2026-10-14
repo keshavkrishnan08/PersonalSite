@@ -1,0 +1,78 @@
+/* Shared by every page: the tab bar. Inner pages also use the .doc typography below. */
+:root {
+  --text: #1d1d1f;
+  --muted: #6e6e73;
+  --bg: #ffffff;
+  --rule: rgba(29, 29, 31, 0.3);
+  --type: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+  padding: 24px 0 8px;
+  font: 14px/1.6 var(--type);
+}
+.tabs a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.tabs a:hover { color: var(--text); }
+.tabs a[aria-current="page"] { color: var(--text); font-weight: 500; }
+
+/* Inner pages */
+body.doc {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.6 var(--type);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body.doc ::selection { background: rgba(29, 29, 31, 0.15); }
+.doc .wrap { max-width: 580px; padding: 0 24px; }
+.doc main { padding: 48px 0 40px; }
+.doc p { margin: 0; }
+
+.doc .group { margin-bottom: 2.5em; }
+.doc .label {
+  margin: 0 0 1em;
+  font-size: 11px;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.doc .label.spaced { margin-bottom: 1.5em; }
+
+/* Award style list */
+.doc ul { list-style: none; margin: 0; padding: 0; }
+.doc li { padding-left: 30px; margin-bottom: 0.75em; }
+
+/* Work style entry: name on the first line, description indented below */
+.doc .entry { padding-left: 30px; text-indent: -30px; margin-bottom: 1.75em; }
+.doc .entry .name { font-weight: 500; }
+.doc .entry .desc { display: inline-block; padding-left: 30px; text-indent: 0; }
+
+/* Publication style entry */
+.doc .pub { padding-left: 30px; margin-bottom: 2.5em; }
+.doc .pub:last-child { margin-bottom: 0; }
+.doc .meta { display: block; font-size: 13px; color: var(--muted); }
+.doc .links { display: block; font-size: 13px; }
+.doc .links a + a { margin-left: 14px; }
+
+.doc a.u {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-underline-offset: 3px;
+  transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.doc a.u:hover { opacity: 0.7; }
+
+@media (max-width: 420px) {
+  .tabs { gap: 6px 18px; }
+}

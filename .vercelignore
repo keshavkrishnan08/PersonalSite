@@ -1,6 +1,12 @@
 # Ship only the site itself. Notes, design exports, and repo files stay out of the deploy.
 /*
 !/index.html
+!/work.html
+!/projects.html
+!/research.html
+!/awards.html
+!/site.css
 !/llms.txt
+!/vercel.json
 !/assets
 /assets/README.md
