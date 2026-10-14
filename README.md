@@ -1,50 +1,67 @@
 # PersonalSite
 
-**Keshav Krishnan's portfolio: one hand-written HTML file with no framework, no build step, and no third-party requests, animated by about 150 lines of vanilla JavaScript.**
+**Keshav Krishnan's portfolio: five hand-written HTML pages, one stylesheet, no framework, and no build step. An animated about page up front, and four plain, type-only pages for work, projects, research, and awards.**
 
-A portfolio is read once, quickly, often on a phone, by someone deciding whether to keep going. Many are framework apps that ship a runtime to render what is mostly static text. This one treats the page as a document. Everything lives in `index.html`, the content is plain markup, and motion is layered on only after the browser shows the page is live, so nothing stays hidden if the script fails or the reader never scrolls. The same content also ships as plain Markdown, once behind a button for people and once as `llms.txt` for language models.
+A portfolio is read once, quickly, often on a phone, by someone deciding whether to keep going. Most of
+that reader's questions are plain ones: what does this person do, what have they built, what have they
+published, what have they won. This site answers the first one with a full-bleed about page, and the
+rest the way a good CV does: a name, a role, one paragraph, a link, and nothing in the way.
 
 Live site: **https://keshavkrishnan.vercel.app**
 
 ```
-index.html  ->  first paint: every section visible, no script required
-            ->  IntersectionObserver probe fires  ->  motion enabled
-            ->  headings split into words; anything already on screen animates now
-            ->  first scroll: hide what is below the fold, observe each element
-            ->  element enters the viewport  ->  its keyframe plays once  ->  unobserved
+/            index.html     about: hero, portrait, interests, contact (system type, scroll motion)
+/work        work.html      current and past roles, then skills
+/projects    projects.html  FIREWATCH, CROSSING, GridWatch, crop waste forecasting
+/research    research.html  paper, research in progress, patent
+/awards      awards.html    research, robotics, leadership
+             site.css       the shared tab bar and the inner-page type
+             vercel.json    clean URLs: /work serves work.html
 ```
 
-Visible first, animated second.
+Say it once, plainly.
 
 ## The core idea
 
-1. **One file, nothing to build.** Markup, styles, and script sit in a single `index.html` (615 lines). There is no bundler, no package manifest, no web font, and no analytics. The only network requests are the local images in `assets/`, about 2 MB of optimized JPEG and SVG, loaded with the page and given intrinsic sizes so nothing shifts as they arrive. Lazy loading was tried and dropped: with the reveal animations it showed empty frames on the way in.
-2. **Visible by default, still on request.** The page renders complete without JavaScript, and readers who ask their system for reduced motion get the page with no animation at all. Motion switches on only after an IntersectionObserver probe confirms the page is live, and elements below the fold are hidden only after the first scroll event, right before they are observed.
-3. **The same content in three forms.** The HTML page, a "Markdown" overlay with a copy button, and `llms.txt` carry the same text, so a reader or a model can take the whole page as plain text.
+1. **Two registers.** The about page keeps its large type, portrait, and scroll motion. Every other page
+   is text only, so the facts read at a glance and nothing animates between the reader and a link.
+2. **One column, one size.** Inner pages sit in a single 580 px column set in 15 px Helvetica Neue at a
+   1.6 line height. Section labels are 11 px uppercase with 0.08 em tracking. Entries hang: the name
+   starts at the margin and the description is indented beneath it. Links are underlined at 30%
+   opacity with a 3 px offset.
+3. **Nothing to build.** Static HTML and one stylesheet. Vercel serves `/work` from `work.html` through
+   `cleanUrls`, and every push to `main` deploys.
 
 ## What it does
 
-| Piece | Detail |
+| Page | What is on it |
 |---|---|
-| **Sections** | Intro with portrait, "What I'm interested in," Ventures, Selected research, Projects, Selected CV, "Familiar with" (three skill columns), and a dark contact footer. |
-| **Navigation** | A fixed frosted-glass pill (`backdrop-filter: saturate(180%) blur(20px)`) with five anchor links and CSS smooth scrolling. |
-| **Reveal** | 21 blocks animate once on entry. Plain blocks fade and rise into place (`omUp`, 1.05 s); blocks that hold an entry or a figure use the slide or zoom below. |
-| **Unravel** | 8 large headings are split into one `<span>` per word in script, and each word settles in from a blur, a slight rotation, and a smaller scale (`omWord`, 0.98 s), staggered 56 ms apart. |
-| **Alternating entries** | 10 text-and-image entries alternate sides by their index on the page: the script sets column order, text alignment, and which side each half slides in from (`omInL` / `omInR`, 155 px, 1.15 s, 90 ms apart). |
-| **Zoom** | 11 figures scale to 1.03 on hover. The full-width FIREWATCH figure, which stands outside an entry, opens from a rounded inner rectangle with an animated `clip-path` (`omImg`, 1.35 s); the others slide in with their entry. |
-| **Rules and arrows** | 5 section dividers grow with `scaleX` (`omLine`). 15 arrow links nudge their arrow 4 px on hover. |
-| **Markdown view** | A fixed button opens the whole page as Markdown in a dialog, with Copy (Clipboard API), Close, Escape, and click-outside to dismiss. Below 920 px wide the button moves to the bottom-right corner, clear of the nav. |
-| **Favicon and previews** | An inline base64 SVG monogram, so there is no icon file to fetch. A meta description, canonical URL, and Open Graph and Twitter tags give link previews a title, summary, and portrait. |
+| **Home** | Intro and portrait, "What I'm interested in," and a dark contact footer with email, GitHub, LinkedIn, and a CV request. A Markdown button opens the whole profile as copyable plain text. |
+| **Work** | Currently: Kilra, CropConnect, George Mason ASSIP, Park Tudor VEX Robotics, Mock Trial, VolunteerU. Previously: EP Industrial Coatings. Then the skills list. |
+| **Projects** | FIREWATCH, CROSSING, GridWatch, and crop waste forecasting, each with its stack and links to the live site and the code. |
+| **Research** | 1. Research papers (IEEE IECON 2026), 2. research in progress (George Mason ASSIP), 3. patents (a U.S. provisional application with 26 claims). |
+| **Awards** | Research, robotics, and leadership honors. |
 
 ## How it works
 
-**Markup and styles.** Two small `<style>` blocks hold the base rules, six `@keyframes`, a `prefers-reduced-motion` override, and the overlay styles. Everything else is inline on the elements, so each section can be read and edited in one place. Animation behavior is declared with data attributes (`data-reveal`, `data-unravel`, `data-entry`, `data-zoom`, `data-rule`, `data-arrow`) rather than classes.
+**Tab bar.** `site.css` defines one `.tabs` bar used on every page: 14 px links with 24 px gaps, muted
+until hovered, and the current page marked with `aria-current="page"` in the text color at weight 500.
+Below 420 px the gap tightens to 18 px so all five tabs stay on one line.
 
-**Layout.** Sections are centered with `max-width`, and type and spacing scale with `clamp()`, from phone to desktop. Entries use `grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))`, which collapses to one column on narrow screens without a single media query. Entry titles use `text-wrap: balance`, paragraphs `text-wrap: pretty`, and the body uses `overflow-x: clip` so off-screen slide-ins never create a horizontal scrollbar.
+**Inner pages.** `body.doc` sets the column, type, and colors. `.group` spaces sections by 2.5 em,
+`.label` sets the small uppercase headings, `.entry` is the hanging-indent role or project with a
+`.desc` block indented 30 px further, `.pub` is a citation with a smaller muted `.meta` line, and `li`
+items indent 30 px with 0.75 em between them.
 
-**Motion.** One IIFE wires everything on `DOMContentLoaded`. If the reader prefers reduced motion it stops after laying out the entries. Otherwise a probe observer on `<body>` calls `enableMotion` the first time it fires. That splits the unravel headings, plays every element whose top is already within 97% of the viewport, and arms a one-time scroll listener. On the first scroll, the remaining elements are hidden (words to opacity 0, rules to `scaleX(0)`, blocks to opacity 0) and handed to a second IntersectionObserver (threshold 0.01), which plays each element once and unobserves it. A passive scroll handler also plays anything within 99% of the viewport as a fallback. Each element is marked `data-played` so nothing animates twice.
+**About page motion.** One script wires everything on `DOMContentLoaded`. Nothing is hidden until an
+IntersectionObserver probe confirms the page is live; then the two large headings split into words
+that settle in from a blur, the hero slides in from both sides, and blocks rise into place as they
+enter the viewport, each playing once. Readers who ask their system for reduced motion get no
+animation at all.
 
-**Theme.** A single light palette: near-black `#1d1d1f` on white, three grays for secondary text, a dark `#1d1d1f` footer for contrast, and a custom `::selection` color. Type is the system stack (`-apple-system`, BlinkMacSystemFont, Helvetica Neue), so San Francisco renders on Apple devices with nothing to download.
+**Deploys.** The Vercel project is connected to this repository, so a push to `main` builds and
+serves the site at keshavkrishnan.vercel.app. `.vercelignore` is an allowlist: only the five pages,
+`site.css`, `llms.txt`, `vercel.json`, and `assets/` ship.
 
 ## Run it
 
@@ -52,23 +69,26 @@ Visible first, animated second.
 python3 -m http.server 8787     # then open http://localhost:8787
 ```
 
-To deploy, put `index.html`, `llms.txt`, and `assets/` on any static host. There is nothing to build.
+Locally, open inner pages by file name (`/work.html`); the extensionless URLs come from Vercel.
 
 ## Layout
 
 ```
-index.html         the whole site: markup, inline styles, motion script, Markdown overlay
-llms.txt           the page as Markdown for language models (same text as the overlay)
-assets/            portrait, App Store screenshots, project screenshots, figures
-assets/README.md   where each image came from
+index.html       about page: markup, inline styles, motion script, Markdown overlay
+work.html        roles and skills
+projects.html    projects with links
+research.html    paper, research in progress, patent
+awards.html      honors
+site.css         tab bar and inner-page typography
+vercel.json      clean URLs
+llms.txt         the profile as Markdown for language models
+assets/          the portrait (also the link-preview image)
 ```
 
 ## Honesty
 
-* There is no dark mode. The page is one light palette by design.
-* The content is maintained by hand in three places: the HTML, the Markdown overlay, and `llms.txt`.
-  They match today, but nothing keeps them in sync.
-* Four figures are illustrative drawings, not data plots: `research-charging.svg`,
-  `research-energy.svg`, `robotics.svg`, and `crop-county.svg`, as `assets/README.md` notes.
-* Figures quoted on the page, such as revenue, research results, and awards, are not sourced in this
+* There is no dark mode. Every page uses one light palette by design.
+* The profile text is maintained by hand in the pages, the Markdown overlay, and `llms.txt`. Nothing
+  keeps them in sync.
+* Figures quoted on the site, such as revenue, research results, and awards, are not sourced in this
   repo. Each project's own repository is the place to check them.
