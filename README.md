@@ -1,6 +1,6 @@
 # PersonalSite
 
-**Keshav Krishnan's portfolio: seven hand-written HTML pages, one stylesheet, no framework, and no build step. Every page is plain type in a single centered column.**
+**Keshav Krishnan's portfolio: seven hand-written HTML pages, one stylesheet, no framework, and no build step. An animated home page with a portrait, and six plain, type-only pages in a single centered column.**
 
 A portfolio is read once, quickly, often on a phone, by someone deciding whether to keep going. Most of
 that reader's questions are plain ones: what does this person do, what have they built, what have they
@@ -10,7 +10,7 @@ rest the way a good CV does: a name, a role, a sentence or two, a link, and noth
 Live site: **https://keshavkrishnan.vercel.app**
 
 ```
-/                  index.html             name, bio, interests, contact links
+/                  index.html             intro and portrait, interests, contact
 /entrepreneurship  entrepreneurship.html  Kilra, CropConnect, VolunteerU
 /research          research.html          paper, ongoing research, patent
 /projects          projects.html          FIREWATCH, CROSSING, GridWatch, skills
@@ -27,7 +27,7 @@ Say it once, plainly.
 
 1. **One column, one voice.** Every page sits in a centered 580 px column on a warm off-white
    (`#f1efe9`) with near-black text (`#14130f`) and a warm gray (`#6b675e`) for labels and inactive
-   tabs. Type is Helvetica Neue: 15 px at a 1.6 line height, with a 72 px name on the home page.
+   tabs. Type is Helvetica Neue, 15 px at a 1.6 line height on the inner pages.
 2. **Organized by what a reader asks.** Companies, research, projects, school, jobs, and awards each
    get their own tab, so nothing is buried under anything else.
 3. **Nothing to build.** Static HTML and one stylesheet. The inner pages come from one generator so
@@ -44,9 +44,10 @@ by `aria-current="page"` in the text color at weight 500. It wraps to a second l
 description 30 px beneath it. Award items are plain list lines indented 30 px. Links are underlined
 at 30% opacity with a 3 px offset.
 
-**Home.** The name, a 480 px bio, a short interests section, and a row of 17 px line icons for
-LinkedIn, GitHub, a CV request, and email. A Markdown button opens the whole profile as copyable
-plain text.
+**Home.** An intro with the portrait, "What I'm interested in," and a contact section with a CV
+request, email, GitHub, and LinkedIn, in the same palette and type. Blocks rise into place and the
+large headings settle in word by word as they enter the viewport; readers who ask for reduced
+motion get none. A Markdown button opens the whole profile as copyable plain text.
 
 **Deploys.** The Vercel project is connected to this repository, and keshavkrishnan.vercel.app is a
 project domain, so a push to `main` updates the live site. `.vercelignore` is an allowlist: only the
@@ -64,7 +65,7 @@ To change an inner page, edit its content in `build.py` and run `python3 build.p
 ## Layout
 
 ```
-index.html              home: name, bio, interests, contact icons, Markdown overlay
+index.html              home: intro and portrait, interests, contact, motion, Markdown overlay
 entrepreneurship.html   companies
 research.html           paper, ongoing research, patent
 projects.html           projects and skills
@@ -74,7 +75,7 @@ awards.html             awards
 site.css                shared styles
 vercel.json             clean URLs
 llms.txt                the profile as Markdown for language models
-assets/                 the portrait used for link previews
+assets/                 the portrait
 build.py                generates the six inner pages from one template
 ```
 

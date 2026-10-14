@@ -24,6 +24,227 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjI0IiBmaWxsPSIjMWQxZDFmIi8+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxsaW5lIHgxPSIzNCIgeTE9IjI3IiB4Mj0iMzQiIHkyPSI3MyIvPjxsaW5lIHgxPSIzOCIgeTE9IjUxIiB4Mj0iNjkiIHkyPSIyNyIvPjxsaW5lIHgxPSIzOCIgeTE9IjUxIiB4Mj0iNjkiIHkyPSI3MyIvPjwvZz48L3N2Zz4K">
 <link rel="stylesheet" href="/site.css">
 <style>
+html{scroll-behavior:smooth}
+body{margin:0;overflow-x:clip;background:#f1efe9;color:#14130f;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+a{color:#14130f;text-decoration:none}
+a:hover{color:#6b675e}
+img{display:block}
+::selection{background:rgba(20,19,15,.15)}
+@keyframes omUp{0%{opacity:0;transform:translateY(90px) scale(.92);filter:blur(11px)}55%{filter:blur(0)}100%{opacity:1;transform:none;filter:blur(0)}}
+@keyframes omWord{0%{opacity:0;transform:translateY(1.15em) rotate(7deg) scale(.7);filter:blur(20px)}55%{filter:blur(0)}100%{opacity:1;transform:none;filter:blur(0)}}
+@keyframes omLine{from{transform:scaleX(0);opacity:.15}to{transform:scaleX(1);opacity:1}}
+@keyframes omInL{0%{opacity:0;transform:translateX(-155px) scale(.955);filter:blur(7px)}60%{filter:blur(0)}100%{opacity:1;transform:none;filter:blur(0)}}
+@keyframes omInR{0%{opacity:0;transform:translateX(155px) scale(.955);filter:blur(7px)}60%{filter:blur(0)}100%{opacity:1;transform:none;filter:blur(0)}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+@keyframes omImg{0%{opacity:0;clip-path:inset(23% 16% 23% 16% round 48px);transform:scale(1.22);filter:blur(9px)}60%{filter:blur(0)}100%{opacity:1;clip-path:inset(0 0 0 0 round 30px);transform:none;filter:blur(0)}}
+</style>
+</head>
+<body>
+
+<div style="box-sizing:border-box;max-width:580px;margin:0 auto;padding:0 24px">
+  <nav class="tabs">
+    <a href="/" aria-current="page">Home</a>
+    <a href="/entrepreneurship">Entrepreneurship</a>
+    <a href="/research">Research</a>
+    <a href="/projects">Projects</a>
+    <a href="/school">School</a>
+    <a href="/work">Work</a>
+    <a href="/awards">Awards</a>
+  </nav>
+</div>
+
+<main>
+  <section style="min-height:72vh;display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,6vw,80px) 24px clamp(56px,8vw,100px);max-width:1240px;margin:0 auto">
+    <div data-reveal data-entry style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(36px,5vw,80px);align-items:center">
+      <div data-etext data-slide="L">
+        <div style="font-size:clamp(30px,3.6vw,48px);letter-spacing:-.03em;font-weight:500">Hi, I&#8217;m Keshav &#128075;</div>
+        <div style="margin:18px 0 0;max-width:27em;font-size:clamp(18px,1.9vw,24px);line-height:1.4;color:#14130f;font-weight:500;letter-spacing:-.015em">I build AI products.</div>
+        <p style="margin:18px 0 0;max-width:30em;font-size:clamp(16px,1.6vw,19px);line-height:1.6;color:#6b675e;text-wrap:pretty">I&#8217;m a senior at Park Tudor School in Indianapolis, Indiana. I started coding at nine, following a YouTube HTML course to build a Facebook clone, and fell in love with programming. When my dad showed me ChatGPT in 2023, my focus shifted to building AI systems. More than the technology, though, my real passion is leading teams and sharing my ideas with the world, whether from a conference stage or around a small table. In my free time I&#8217;m a dedicated gymgoer (just hit 225 on bench press), a new runner training for a sub-1:55 half marathon, and a jazz musician (bass guitar on top!).</p>
+      </div>
+      <div data-ethumb data-slide="R" data-zoom style="border-radius:32px;overflow:hidden;border:1px solid rgba(20,19,15,.12);max-width:420px;justify-self:end;width:100%">
+        <img width="800" height="800" fetchpriority="high" src="assets/keshav.jpg" alt="Keshav Krishnan" style="width:100%;height:auto;transition:transform .8s cubic-bezier(.2,.7,.2,1)">
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(64px,7vw,110px) 24px clamp(110px,13vw,200px);max-width:1000px;margin:0 auto;text-align:center">
+    <h2 data-unravel style="margin:0 auto;max-width:18em;font-size:clamp(28px,4.4vw,54px);line-height:1.04;letter-spacing:-.04em;font-weight:500">What I&#8217;m interested in.</h2>
+    <p data-reveal style="margin:clamp(26px,3.6vw,44px) auto 0;max-width:34em;font-size:clamp(17px,1.7vw,21px);line-height:1.55;color:#6b675e;text-wrap:pretty">In 1903, the New York Times argued that a working flying machine was a million years away. Sixty-nine days later, the Wright brothers flew; sixty-six years after that, we walked on the moon. Now that AI has made coding and knowledge almost free, I think humanity&#8217;s next step is to reapportion that freed-up ambition toward log-linear, outsized results. The startups that matter shouldn&#8217;t chase small things; they should take on the audacious ones, energy, physical intelligence, even interstellar travel, that today feel inconceivable.</p>
+  </section>
+
+  <footer id="contact" style="padding:clamp(108px,13vw,195px) 24px clamp(60px,6vw,80px);border-top:1px solid rgba(20,19,15,.12);text-align:center">
+    <div style="max-width:1300px;margin:0 auto">
+      <h2 data-unravel style="margin:0;font-size:clamp(34px,7.4vw,112px);line-height:.98;letter-spacing:-.045em;font-weight:500">Let&#8217;s build something.</h2>
+      <div data-reveal style="margin-top:clamp(30px,3.6vw,52px)">
+        <a href="mailto:keshav-krishnan@outlook.com?subject=Complete%20CV%20request" data-arrow style="display:inline-flex;align-items:center;gap:9px;padding:14px 28px;border-radius:999px;border:1px solid rgba(20,19,15,.2);color:#14130f;font-size:15px;font-weight:500">Request my complete CV <span data-arrowtip style="display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1)">&#8594;</span></a>
+      </div>
+      <div data-reveal style="margin-top:clamp(48px,6vw,86px);display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(24px,4vw,60px)">
+        <a href="mailto:keshav-krishnan@outlook.com" data-arrow style="color:#14130f;font-size:17px;display:inline-flex;align-items:center;gap:9px">Email <span data-arrowtip style="display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1)">&#8594;</span></a>
+        <a href="https://github.com/keshavkrishnan08" target="_blank" rel="noopener" data-arrow style="color:#14130f;font-size:17px;display:inline-flex;align-items:center;gap:9px">GitHub <span data-arrowtip style="display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1)">&#8594;</span></a>
+        <a href="https://www.linkedin.com/in/keshav-krishnan-897394356/" target="_blank" rel="noopener" data-arrow style="color:#14130f;font-size:17px;display:inline-flex;align-items:center;gap:9px">LinkedIn <span data-arrowtip style="display:inline-block;transition:transform .35s cubic-bezier(.2,.7,.2,1)">&#8594;</span></a>
+      </div>
+      <div style="margin-top:clamp(72px,9vw,130px);font-size:12.5px;color:#6b675e">&#169; 2026 Keshav</div>
+    </div>
+  </footer>
+</main>
+
+<script>
+/* Scroll interactions: reveal, word unravel, slide and image zoom on enter.
+   Vanilla JS, no framework or runtime, so the page is a single static file. */
+(function () {
+  var app = {
+    _io: null, _probe: null, _onScroll: null, _motion: false, _armed: false,
+
+    wire: function () {
+      const root = document.body;
+
+      if (!this._io) {
+        root.querySelectorAll("[data-m]:not([data-played])").forEach((el) => {
+          el.style.opacity = "";
+          el.style.transform = "";
+          el.querySelectorAll("span[data-w]").forEach((s) => { s.style.opacity = ""; });
+        });
+      }
+
+      root.querySelectorAll("[data-entry]").forEach((el, i) => {
+        const text = el.querySelector("[data-etext]");
+        const thumb = el.querySelector("[data-ethumb]");
+        if (!text || !thumb) return;
+        const flip = i % 2 === 1;
+        text.style.order = flip ? "2" : "1";
+        thumb.style.order = flip ? "1" : "2";
+        text.style.textAlign = flip ? "right" : "left";
+        text.querySelectorAll("p").forEach((p) => { p.style.marginLeft = flip ? "auto" : "0"; });
+        text.dataset.slide = flip ? "R" : "L";
+        thumb.dataset.slide = flip ? "L" : "R";
+      });
+
+      root.querySelectorAll("[data-zoom]:not([data-hov])").forEach((el) => {
+        el.dataset.hov = "1";
+        const img = el.querySelector("img");
+        el.addEventListener("mouseenter", () => { if (img) img.style.transform = "scale(1.03)"; });
+        el.addEventListener("mouseleave", () => { if (img) img.style.transform = "none"; });
+      });
+
+      root.querySelectorAll("[data-arrow]:not([data-hov])").forEach((el) => {
+        el.dataset.hov = "1";
+        const tip = el.querySelector("[data-arrowtip]");
+        if (!tip) return;
+        el.addEventListener("mouseenter", () => { tip.style.transform = "translateX(4px)"; });
+        el.addEventListener("mouseleave", () => { tip.style.transform = "none"; });
+      });
+
+      const still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (still) return;
+
+      if (!this._probe && typeof IntersectionObserver === "function") {
+        this._probe = new IntersectionObserver(() => {
+          this._probe.disconnect();
+          this._probe = null;
+          this.enableMotion();
+        });
+        this._probe.observe(root);
+      } else if (this._motion) {
+        this.enableMotion();
+      }
+
+      if (!this._onScroll) {
+        this._onScroll = () => {
+          document.querySelectorAll("[data-m]:not([data-played])").forEach((el) => {
+            if (el.getBoundingClientRect().top < window.innerHeight * 0.99) this.play(el);
+          });
+        };
+        window.addEventListener("scroll", this._onScroll, { passive: true });
+        this._onScroll();
+      }
+    },
+
+    enableMotion: function () {
+      this._motion = true;
+      const root = document.body;
+      const io = this._io || (this._io = new IntersectionObserver((es) => {
+        es.forEach((e) => {
+          if (e.isIntersecting) { this.play(e.target); this._io.unobserve(e.target); }
+        });
+      }, { rootMargin: "0px 0px 0% 0px", threshold: 0.01 }));
+
+      root.querySelectorAll("[data-unravel]:not([data-split])").forEach((el) => {
+        el.dataset.split = "1";
+        const words = (el.textContent || "").split(/\s+/).filter(Boolean);
+        el.textContent = "";
+        words.forEach((w, i) => {
+          const s = document.createElement("span");
+          s.textContent = w;
+          s.style.display = "inline-block";
+          s.style.willChange = "transform,filter,opacity";
+          s.dataset.w = String(i);
+          el.appendChild(s);
+          if (i < words.length - 1) el.appendChild(document.createTextNode(" "));
+        });
+      });
+
+      const pending = [];
+      root.querySelectorAll("[data-reveal]:not([data-m]),[data-unravel]:not([data-m]),[data-rule]:not([data-m])").forEach((el) => {
+        el.dataset.m = "1";
+        if (el.getBoundingClientRect().top < window.innerHeight * 0.97) this.play(el);
+        else pending.push(el);
+      });
+
+      if (!pending.length || this._armed) return;
+      this._armed = true;
+      const arm = () => {
+        window.removeEventListener("scroll", arm);
+        pending.forEach((el) => {
+          if (el.dataset.played) return;
+          if (el.getBoundingClientRect().top < window.innerHeight * 0.99) { this.play(el); return; }
+          if (el.hasAttribute("data-unravel")) el.querySelectorAll("span[data-w]").forEach((s) => { s.style.opacity = "0"; });
+          else if (el.hasAttribute("data-rule")) el.style.transform = "scaleX(0)";
+          else el.style.opacity = "0";
+          io.observe(el);
+        });
+      };
+      window.addEventListener("scroll", arm, { passive: true, once: true });
+    },
+
+    play: function (el) {
+      if (el.dataset.played) return;
+      el.dataset.played = "1";
+      if (el.hasAttribute("data-unravel")) {
+        el.querySelectorAll("span[data-w]").forEach((s, i) => {
+          s.style.opacity = "";
+          s.style.animation = "omWord 0.98s cubic-bezier(.16,.84,.28,1) both";
+          s.style.animationDelay = (i * 0.056).toFixed(3) + "s";
+        });
+        return;
+      }
+      if (el.hasAttribute("data-rule")) {
+        el.style.transform = "";
+        el.style.animation = "omLine 1.0s cubic-bezier(.16,.84,.28,1) .06s both";
+        return;
+      }
+      el.style.opacity = "";
+      const sides = el.querySelectorAll("[data-slide]");
+      if (sides.length) {
+        sides.forEach((c, i) => {
+          c.style.animation = (c.dataset.slide === "L" ? "omInL" : "omInR") + " 1.15s cubic-bezier(.16,.84,.28,1) both";
+          c.style.animationDelay = (i * 0.09).toFixed(2) + "s";
+        });
+        return;
+      }
+      if (el.hasAttribute("data-zoom")) {
+        el.style.animation = "omImg 1.35s cubic-bezier(.16,.84,.28,1) both";
+        return;
+      }
+      el.style.animation = "omUp 1.05s cubic-bezier(.16,.84,.28,1) both";
+    }
+  };
+
+  function boot() { app.wire(); }
+  if (document.readyState !== "loading") boot();
+  else document.addEventListener("DOMContentLoaded", boot);
+})();
+</script>
+<style>
 #mdBtn{position:fixed;bottom:16px;right:16px;z-index:90;font:500 12px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:.02em;color:#14130f;background:rgba(241,239,233,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(20,19,15,.14);border-radius:999px;padding:9px 13px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
 #mdBtn:hover{border-color:rgba(20,19,15,.35)}
 #mdOverlay{position:fixed;inset:0;z-index:200;display:none;background:rgba(20,19,15,.28);align-items:center;justify-content:center;padding:24px}
@@ -35,31 +256,6 @@
 #mdHead #mdCopy{background:#14130f;color:#f1efe9;border-color:#14130f}
 #mdBody{margin:0;padding:18px 20px;overflow:auto;font:13px/1.62 ui-monospace,SFMono-Regular,Menlo,monospace;color:#14130f;white-space:pre-wrap;word-wrap:break-word}
 </style>
-</head>
-<body class="doc">
-<div class="wrap">
-  <nav class="tabs">
-    <a href="/" aria-current="page">Home</a>
-    <a href="/entrepreneurship">Entrepreneurship</a>
-    <a href="/research">Research</a>
-    <a href="/projects">Projects</a>
-    <a href="/school">School</a>
-    <a href="/work">Work</a>
-    <a href="/awards">Awards</a>
-  </nav>
-  <main class="home">
-    <h1>keshav krishnan</h1>
-    <p class="bio">Hi, I&#8217;m Keshav, and I build AI products. I&#8217;m a senior at Park Tudor School in Indianapolis, Indiana. I started coding at nine, following a YouTube HTML course to build a Facebook clone, and fell in love with programming. When my dad showed me ChatGPT in 2023, my focus shifted to building AI systems. More than the technology, though, my real passion is leading teams and sharing my ideas with the world, whether from a conference stage or around a small table. In my free time I&#8217;m a dedicated gymgoer (just hit 225 on bench press), a new runner training for a sub-1:55 half marathon, and a jazz musician (bass guitar on top!).</p>
-    <p class="label home-label">What I&#8217;m interested in</p>
-    <p class="bio">In 1903, the New York Times argued that a working flying machine was a million years away. Sixty-nine days later, the Wright brothers flew; sixty-six years after that, we walked on the moon. Now that AI has made coding and knowledge almost free, I think humanity&#8217;s next step is to reapportion that freed-up ambition toward log-linear, outsized results. The startups that matter shouldn&#8217;t chase small things; they should take on the audacious ones, energy, physical intelligence, even interstellar travel, that today feel inconceivable.</p>
-    <footer class="social">
-      <a href="https://www.linkedin.com/in/keshav-krishnan-897394356/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
-      <a href="https://github.com/keshavkrishnan08" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
-      <a href="mailto:keshav-krishnan@outlook.com?subject=Complete%20CV%20request" aria-label="Request my complete CV"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg></a>
-      <a href="mailto:keshav-krishnan@outlook.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
-    </footer>
-  </main>
-</div>
 <button id="mdBtn" onclick="document.getElementById('mdOverlay').classList.add('open')" aria-label="View this page as Markdown">&#9776; Markdown</button>
 <div id="mdOverlay" onclick="if(event.target===this)this.classList.remove('open')">
   <div id="mdPanel" role="dialog" aria-label="Page as Markdown">
