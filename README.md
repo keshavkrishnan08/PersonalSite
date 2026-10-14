@@ -18,7 +18,7 @@ Visible first, animated second.
 
 ## The core idea
 
-1. **One file, nothing to build.** Markup, styles, and script sit in a single `index.html` (615 lines). There is no bundler, no package manifest, no web font, and no analytics. The only network requests are the local images in `assets/`, about 2 MB of optimized JPEG and SVG, lazy-loaded below the fold with intrinsic sizes so nothing shifts as they arrive.
+1. **One file, nothing to build.** Markup, styles, and script sit in a single `index.html` (615 lines). There is no bundler, no package manifest, no web font, and no analytics. The only network requests are the local images in `assets/`, about 2 MB of optimized JPEG and SVG, loaded with the page and given intrinsic sizes so nothing shifts as they arrive. Lazy loading was tried and dropped: with the reveal animations it showed empty frames on the way in.
 2. **Visible by default, still on request.** The page renders complete without JavaScript, and readers who ask their system for reduced motion get the page with no animation at all. Motion switches on only after an IntersectionObserver probe confirms the page is live, and elements below the fold are hidden only after the first scroll event, right before they are observed.
 3. **The same content in three forms.** The HTML page, a "Markdown" overlay with a copy button, and `llms.txt` carry the same text, so a reader or a model can take the whole page as plain text.
 
