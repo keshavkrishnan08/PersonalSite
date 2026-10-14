@@ -72,8 +72,9 @@ page("entrepreneurship", "Entrepreneurship", "Companies Keshav Krishnan founded:
         entry("Kilra", "Founder, CEO",
               "A digital health app that learns how your body reacts to what you do and shows the real triggers behind how you feel. "
               "I built and lead it end to end, from the iOS app to the custom ML models that find each person&#8217;s triggers.",
-              [("https://apps.apple.com/us/app/kilra-symptom-tracker/id6760767331", "App Store")],
-              stack="Swift, SwiftUI, Core ML"),
+              [("https://apps.apple.com/us/app/kilra-symptom-tracker/id6760767331", "App Store"),
+               ("https://github.com/keshavkrishnan08/Kilra", "GitHub")],
+              stack="Swift, SwiftUI, SwiftData, HealthKit, CloudKit, Core ML, scikit-learn"),
         entry("CropConnect", "Founder",
               "Done-for-you local produce sourcing for restaurants. We find the farms and run delivery, so kitchens can serve local food and charge more for it. "
               "I built the site and the platform behind it.",
