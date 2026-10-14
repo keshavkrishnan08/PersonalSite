@@ -1,0 +1,6 @@
+# Ship only the site itself. Notes, design exports, and repo files stay out of the deploy.
+/*
+!/index.html
+!/llms.txt
+!/assets
+/assets/README.md
