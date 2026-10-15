@@ -160,9 +160,10 @@ page("work", "Work", "Keshav Krishnan's work experience: EP Industrial Coatings 
     group("Experience", [
         entry("EP Industrial Coatings", "Operations &amp; Engineering Intern",
               "Built a computer vision tool that turns photos of equipment into coating quotes, and wrote the company&#8217;s standard operating procedures. "
-              "The tool embeds each photo with CLIP, finds the most similar past coating jobs, and drafts a priced estimate from them.",
-              [("https://github.com/keshavkrishnan08/Enviropeel-Project", "GitHub")],
-              stack="Python, Flask, SQLAlchemy, PyTorch, CLIP and BLIP (Hugging Face Transformers), Pillow"),
+              "The tool embeds each photo with CLIP, finds the most similar past coating jobs, and drafts a priced estimate from them. "
+              "I later moved the model to ONNX Runtime with 8-bit weights so the live demo runs on a small server.",
+              [("https://enviropeel-project.onrender.com", "Live demo"), ("https://github.com/keshavkrishnan08/Enviropeel-Project", "GitHub")],
+              stack="Python, Flask, SQLAlchemy, CLIP, ONNX Runtime, NumPy, Pillow, PyTorch"),
         entry("McDonald&#8217;s", "Crew Member",
               "Part of the restaurant crew, serving customers and keeping orders moving."),
     ]),
