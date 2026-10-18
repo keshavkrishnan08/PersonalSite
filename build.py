@@ -116,8 +116,15 @@ page("research", "Research", "Keshav Krishnan's research: safe battery fast char
     ]),
 ])
 
-page("projects", "Projects", "Keshav Krishnan's projects: FIREWATCH, CROSSING, and GridWatch.", [
+page("projects", "Projects", "Keshav Krishnan's projects: ECHO, FIREWATCH, CROSSING, and GridWatch.", [
     group("Selected projects", [
+        entry("ECHO", "Wi-Fi sensing",
+              "Finds people with Wi-Fi, no cameras. It turns the radio signals between ordinary Wi-Fi devices into a live 3D picture of where people are, "
+              "and marks space no signal reaches as unknown instead of empty. "
+              "A channel simulator feeds a signal pipeline, Bayesian radio tomography reconstructs where people are in 3D, and a Hungarian and Kalman tracker follows each one; "
+              "a Python port matches the TypeScript engine bit for bit.",
+              [("https://github.com/keshavkrishnan08/ECHOSPACE", "GitHub")],
+              stack="TypeScript, Next.js, React Three Fiber, Web Workers, Python, FastAPI, C++20, Bayesian tomography, Kalman filters, Hungarian algorithm"),
         entry("FIREWATCH", "wildfire tracking",
               "Combines camera, satellite, weather, and terrain data into a forecast of where a wildfire will spread, and turns it into evacuation decisions a person approves. "
               "Smoke detection feeds an ensemble of physics-based spread runs, a particle filter reweights them as new observations arrive, and a learned surrogate makes the forecast fast.",
