@@ -102,6 +102,7 @@ page("research", "Research", "Keshav Krishnan's research: safe battery fast char
               "The answer: dirtier, unless the load runs on surplus renewable power. "
               "Published in the Journal of Student-Scientists&#8217; Research at George Mason University, from ASSIP under Dr. Jiasun Li.",
               [("https://journals.gmu.edu/jssr/article/view/5665", "Paper"), ("https://doi.org/10.13021/jssr2026.5665", "DOI"),
+               ("https://github.com/keshavkrishnan08/flexible-load-carbon", "Code"),
                ("https://github.com/keshavkrishnan08/bitcoin-mining-emissions", "Screening analysis")],
               stack="Python, NumPy, SciPy, pandas, statsmodels, matplotlib"),
     ]),

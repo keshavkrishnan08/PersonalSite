@@ -33,6 +33,7 @@ Founder. Done-for-you local produce sourcing for restaurants. Independent kitche
 1st Author, Project Coordinator, George Mason University, Costello College of Business (ASSIP). Modeled the power draw of AI data centers and crypto mining and showed that it raises grid carbon unless the load runs on surplus renewables, a result that held across eight demand models. Earlier in the program I stress-tested published bitcoin-mining emission claims against EIA generation data to see which ones held up. Research under Dr. Jiasun Li; presented at the George Mason student conference and published in the Journal of Student-Scientists' Research (2026).
 - Paper: https://journals.gmu.edu/jssr/article/view/5665
 - DOI: https://doi.org/10.13021/jssr2026.5665
+- Code (team repository): https://github.com/keshavkrishnan08/flexible-load-carbon
 - Tech: Python, NumPy, SciPy, pandas, statsmodels, matplotlib
 - Screening analysis: https://github.com/keshavkrishnan08/bitcoin-mining-emissions
 
