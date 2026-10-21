@@ -16,6 +16,7 @@ Founder, CEO. I built and lead the product end to end, from the custom ML models
 - Tech: Swift, SwiftUI, SwiftData, HealthKit, CloudKit, Core ML, scikit-learn
 - GitHub: https://github.com/keshavkrishnan08/Kilra
 - iOS, live on the App Store: https://apps.apple.com/us/app/kilra-symptom-tracker/id6760767331
+- Website: https://kilra.vercel.app
 
 ### CropConnect
 Founder. Done-for-you local produce sourcing for restaurants. Independent kitchens keep three to five cents on every dollar and have already cut everything they can, so the only real lever left is charging more, and food from a named farm down the road is how they do it: the menu price moves, the food cost barely does, and that gap is almost pure profit. CropConnect runs the entire supply side, finding and vetting the farms and delivering every week, so the kitchen just cooks.
