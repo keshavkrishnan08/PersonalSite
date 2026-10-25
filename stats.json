@@ -1,0 +1,40 @@
+{
+  "as_of": "2026-10-25",
+  "public_repos": 33,
+  "commits": 4868,
+  "languages": [
+    {
+      "name": "Python",
+      "share": 65.9
+    },
+    {
+      "name": "JavaScript",
+      "share": 12.9
+    },
+    {
+      "name": "TypeScript",
+      "share": 12.8
+    },
+    {
+      "name": "Swift",
+      "share": 7.0
+    },
+    {
+      "name": "PLpgSQL",
+      "share": 0.5
+    },
+    {
+      "name": "C++",
+      "share": 0.5
+    },
+    {
+      "name": "C",
+      "share": 0.2
+    },
+    {
+      "name": "Cuda",
+      "share": 0.1
+    }
+  ],
+  "language_count": 11
+}

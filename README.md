@@ -14,8 +14,8 @@ Live site: **https://keshavkrishnan.vercel.app**
 /                  index.html             intro and portrait, interests, contact
 /entrepreneurship  entrepreneurship.html  Kilra, CropConnect, VolunteerU
 /research          research.html          papers, patent
-/projects          projects.html          FIREWATCH, CROSSING, GridWatch, skills
-/school            school.html            VEX Robotics, Mock Trial
+/projects          projects.html          ECHO, FIREWATCH, CROSSING, GridWatch, GitHub stats, more projects, skills
+/school            school.html            VEX Robotics, Mock Trial, DECA, Speech and Debate
 /work              work.html              EP Industrial Coatings, McDonald's
                    site.css               tab bar, column, type, colors
                    vercel.json            clean URLs: /work serves work.html, /awards redirects
@@ -60,7 +60,9 @@ python3 -m http.server 8787     # then open http://localhost:8787
 ```
 
 Locally, open inner pages by file name (`/work.html`); the extensionless URLs come from Vercel.
-To change an inner page, edit its content in `build.py` and run `python3 build.py`.
+To change an inner page, edit its content in `build.py` and run `python3 build.py`. To refresh the GitHub
+numbers on the Projects page, run `python3 stats.py` first (it needs an authenticated `gh` CLI and
+writes `stats.json`, which the page labels with the date it was counted).
 
 ## Layout
 
@@ -76,6 +78,7 @@ vercel.json             clean URLs
 llms.txt                the profile as Markdown for language models
 assets/                 the portrait
 build.py                generates the five inner pages from one template
+stats.py, stats.json    GitHub repository, commit, and language counts for the Projects page
 ```
 
 ## Honesty

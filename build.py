@@ -1,9 +1,10 @@
 """Generate the inner pages of keshavkrishnan.vercel.app from one template so every page shares the tab bar.
 
 Edit the content below, then run `python3 build.py`. The home page (index.html) is written by hand."""
-import pathlib, sys
+import datetime, json, pathlib, sys
 
 ROOT = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else pathlib.Path(__file__).resolve().parent
+SRC = pathlib.Path(__file__).resolve().parent
 ICON = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjI0IiBmaWxsPSIjMWQxZDFmIi8+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxsaW5lIHgxPSIzNCIgeTE9IjI3IiB4Mj0iMzQiIHkyPSI3MyIvPjxsaW5lIHgxPSIzOCIgeTE9IjUxIiB4Mj0iNjkiIHkyPSIyNyIvPjxsaW5lIHgxPSIzOCIgeTE9IjUxIiB4Mj0iNjkiIHkyPSI3MyIvPjwvZz48L3N2Zz4K"
 TABS = [("/", "Home"), ("/entrepreneurship", "Entrepreneurship"), ("/research", "Research"), ("/projects", "Projects"),
         ("/school", "School"), ("/work", "Work")]
@@ -27,6 +28,23 @@ def entry(name, role, desc, links=(), stack=None):
         tail += '\n          <span class="links">' + "".join(link(h, t) for h, t in links) + "</span>"
     return (f'      <div class="entry">\n        <span class="name">{name}</span>, {role}<br>\n'
             f'        <span class="desc">{desc}{tail}\n        </span>\n      </div>')
+
+
+def github_stats():
+    """The On GitHub block, from the snapshot stats.py writes. Omitted if there is no snapshot."""
+    path = SRC / "stats.json"
+    if not path.exists():
+        return ""
+    s = json.loads(path.read_text(encoding="utf-8"))
+    month = datetime.date.fromisoformat(s["as_of"]).strftime("%B %Y")
+    langs = [l for l in s["languages"] if l["share"] >= 5]
+    mix = ", ".join(f'{l["name"]} ({round(l["share"])}%)' for l in langs[:-1])
+    mix = f'{mix}, and {langs[-1]["name"]} ({round(langs[-1]["share"])}%)' if len(langs) > 1 else mix
+    stat = lambda num, what: f'        <div class="stat"><span class="num">{num}</span><span class="what">{what}</span></div>'
+    return ('    <section class="group">\n      <p class="label">On GitHub</p>\n      <div class="stats">\n'
+            + "\n".join([stat(s["public_repos"], "public repositories"), stat(f'{s["commits"]:,}', "commits"),
+                         stat(s["language_count"], "languages")])
+            + f'\n      </div>\n      <p class="meta">Mostly {mix}. Counted {month}.</p>\n    </section>')
 
 
 def group(label, items, spaced=True):
@@ -116,7 +134,7 @@ page("research", "Research", "Keshav Krishnan's research: safe battery fast char
     ]),
 ])
 
-page("projects", "Projects", "Keshav Krishnan's projects: ECHO, FIREWATCH, CROSSING, and GridWatch.", [
+page("projects", "Projects", "Keshav Krishnan's projects: ECHO, FIREWATCH, CROSSING, GridWatch, and more, with GitHub stats.", [
     group("Selected projects", [
         entry("ECHO", "Wi-Fi sensing",
               "Finds people with Wi-Fi, no cameras. It turns the radio signals between ordinary Wi-Fi devices into a live 3D picture of where people are, "
@@ -141,6 +159,28 @@ page("projects", "Projects", "Keshav Krishnan's projects: ECHO, FIREWATCH, CROSS
               [("https://gridwatch-indiana.vercel.app", "Live map"), ("https://github.com/keshavkrishnan08/GridWatch", "GitHub")],
               stack="TypeScript, Vite, MapLibre GL, D3, Python, Overpass API, Vitest, Playwright"),
     ]),
+    github_stats(),
+    group("More projects", [
+        entry("EP quoting tool", "computer vision",
+              "Turns a photo of a bearing, flange, or gearbox into a priced coating estimate by finding the closest past jobs. "
+              "It runs CLIP on ONNX Runtime with 8-bit weights, so the live demo fits on a small server.",
+              [("https://enviropeel-project.onrender.com", "Live demo"), ("https://github.com/keshavkrishnan08/Enviropeel-Project", "GitHub")],
+              stack="Python, Flask, CLIP, ONNX Runtime, NumPy, Pillow"),
+        entry("Axon", "astrology for business",
+              "Turns a birth date, time, and place into a natal chart computed locally from planetary positions, a numerology life path, and a Chinese zodiac sign, "
+              "then writes a reading from them. Accounts, payments, and email run in production.",
+              [("https://axonservices.dev", "Live site"), ("https://github.com/keshavkrishnan08/AgencySite", "GitHub")],
+              stack="Next.js, TypeScript, astronomy-engine, Supabase, Stripe, Resend, language models"),
+        entry("Dwillo", "home maintenance app",
+              "A SwiftUI app for a home&#8217;s maintenance history. Log a repair once and it works out when the task is due again, reminds you, and scores how well the house is kept up.",
+              [("https://keshavkrishnan08.github.io/Dwello/", "Website"), ("https://github.com/keshavkrishnan08/Dwello", "GitHub")],
+              stack="Swift, SwiftUI"),
+        entry("Drobe", "wardrobe app site",
+              "The landing site for Drobe, an iOS app that turns photos of your clothes into a digital closet and suggests what to wear each day.",
+              [("https://drobe-blush.vercel.app", "Live site"), ("https://github.com/keshavkrishnan08/Drobe", "GitHub")],
+              stack="Next.js, React, TypeScript, Tailwind CSS, Framer Motion"),
+    ]) + '\n    <p class="more"><a class="u" href="https://github.com/keshavkrishnan08?tab=repositories" target="_blank" rel="noopener">'
+         'Every public repository on GitHub</a></p>',
     '    <section class="group">\n      <p class="label">Familiar with</p>\n      <ul>\n'
     '        <li>Languages: Python, C++, Java, TypeScript, Swift, SQL</li>\n'
     '        <li>Machine learning: PyTorch, PyTorch Geometric, scikit-learn, XGBoost, NumPy, SciPy, pandas, statsmodels</li>\n'
@@ -151,7 +191,7 @@ page("projects", "Projects", "Keshav Krishnan's projects: ECHO, FIREWATCH, CROSS
     '      </ul>\n    </section>',
 ])
 
-page("school", "School", "Keshav Krishnan's school involvement at Park Tudor: VEX Robotics and Mock Trial.", [
+page("school", "School", "Keshav Krishnan's school involvement at Park Tudor: VEX Robotics, Mock Trial, DECA, and Speech and Debate.", [
     group("Park Tudor School", [
         entry("VEX Robotics", "Captain, Programmer, Strategy Design",
               "Captained Team 6842V Vicious Vortex to international placements and the most wins in the world across the 2024 and 2025 seasons. "
@@ -161,6 +201,10 @@ page("school", "School", "Keshav Krishnan's school involvement at Park Tudor: VE
         entry("Mock Trial", "Cofounder &amp; President",
               "Cofounded the school&#8217;s mock trial program and built it from the ground up, then took the team to districts, where I won an Outstanding Witness award. "
               "Also organized the school&#8217;s first bipartisan roundtable, bringing state and national officials to speak with students."),
+        entry("DECA", "International Career Development Conference qualifier",
+              "Qualified for DECA&#8217;s International Career Development Conference, the international round of its business competitions."),
+        entry("Speech and Debate", "NSDA District finalist",
+              "Reached the finals at the National Speech and Debate Association district tournament."),
     ]),
 ])
 
