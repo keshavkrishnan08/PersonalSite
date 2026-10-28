@@ -61,6 +61,8 @@ body.doc ::selection { background: rgba(20, 19, 15, 0.15); }
 .doc .pub { padding-left: 30px; margin-bottom: 2.5em; }
 .doc .pub:last-child { margin-bottom: 0; }
 .doc .meta { display: block; margin-top: 0.35em; font-size: 13px; line-height: 1.5; color: var(--muted); }
+.doc .fact { display: block; margin-top: 0.5em; }
+.doc .fact .k { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-right: 6px; }
 .doc .stats { display: flex; flex-wrap: wrap; gap: 12px 36px; padding-left: 30px; }
 .doc .stat .num { display: block; font-size: 24px; font-weight: 500; letter-spacing: -0.01em; line-height: 1.2; font-variant-numeric: tabular-nums; }
 .doc .stat .what { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }

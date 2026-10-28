@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Projects · Keshav Krishnan</title>
-<meta name="description" content="Keshav Krishnan's projects: ECHO, FIREWATCH, CROSSING, GridWatch, and more, with GitHub stats.">
+<meta name="description" content="Keshav Krishnan's projects: ECHO, FIREWATCH, CROSSING, GridWatch, and more, each with what he built, the hard part, and results, plus GitHub stats.">
 <meta name="theme-color" content="#f1efe9">
 <link rel="canonical" href="https://keshavkrishnan.vercel.app/projects">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Projects · Keshav Krishnan">
-<meta property="og:description" content="Keshav Krishnan's projects: ECHO, FIREWATCH, CROSSING, GridWatch, and more, with GitHub stats.">
+<meta property="og:description" content="Keshav Krishnan's projects: ECHO, FIREWATCH, CROSSING, GridWatch, and more, each with what he built, the hard part, and results, plus GitHub stats.">
 <meta property="og:url" content="https://keshavkrishnan.vercel.app/projects">
 <meta property="og:image" content="https://keshavkrishnan.vercel.app/assets/keshav.jpg">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjI0IiBmaWxsPSIjMWQxZDFmIi8+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxsaW5lIHgxPSIzNCIgeTE9IjI3IiB4Mj0iMzQiIHkyPSI3MyIvPjxsaW5lIHgxPSIzOCIgeTE9IjUxIiB4Mj0iNjkiIHkyPSIyNyIvPjxsaW5lIHgxPSIzOCIgeTE9IjUxIiB4Mj0iNjkiIHkyPSI3MyIvPjwvZz48L3N2Zz4K">
@@ -30,28 +30,44 @@
       <p class="label spaced">Selected projects</p>
       <div class="entry">
         <span class="name">ECHO</span>, Wi-Fi sensing<br>
-        <span class="desc">Finds people with Wi-Fi, no cameras. It turns the radio signals between ordinary Wi-Fi devices into a live 3D picture of where people are, and marks space no signal reaches as unknown instead of empty. A channel simulator feeds a signal pipeline, Bayesian radio tomography reconstructs where people are in 3D, and a Hungarian and Kalman tracker follows each one; a Python port matches the TypeScript engine bit for bit.
-          <span class="meta">TypeScript, Next.js, React Three Fiber, Web Workers, Python, FastAPI, C++20, Bayesian tomography, Kalman filters, Hungarian algorithm</span>
+        <span class="desc">Finds people with Wi-Fi, no cameras. It turns the radio signals between ordinary Wi-Fi devices into a live 3D picture of where people are, and reports space no signal reaches as unknown instead of empty.
+          <span class="fact"><span class="k">I built</span> All of it: a seeded radio channel simulator, a signal pipeline (phase cleanup, Hampel filtering), Bayesian radio tomography and a ridge regression floor model, a Hungarian and Kalman tracker, a Next.js interface with nine scenes, a Python reference engine, a FastAPI service, and a C++20 signal library.</span>
+          <span class="fact"><span class="k">Challenge</span> Making the Python port match the TypeScript engine bit for bit meant reproducing V8&#8217;s Math.hypot and JavaScript&#8217;s rounding in Python. Counting unobserved space as occupied collapsed accuracy to an IoU of 0.023, so unknown space is now reported as unknown.</span>
+          <span class="fact"><span class="k">I learned</span> An estimate is only useful with its uncertainty. Marking what the system cannot see made it more trustworthy than guessing everywhere.</span>
+          <span class="fact"><span class="k">Results</span> On 1,240 held-out frames the floor model reaches an IoU of 0.41 (precision 0.52, recall 0.66), never marks an empty room as occupied across 318 empty frames, and tells floors apart on stairs by height. All on simulated data so far; the hardware adapters are untested.</span>
+          <span class="meta">TypeScript, Next.js, React Three Fiber, Web Workers, Python, FastAPI, C++20</span>
           <span class="links"><a class="u" href="https://github.com/keshavkrishnan08/ECHOSPACE" target="_blank" rel="noopener">GitHub</a></span>
         </span>
       </div>
       <div class="entry">
         <span class="name">FIREWATCH</span>, wildfire tracking<br>
-        <span class="desc">Combines camera, satellite, weather, and terrain data into a forecast of where a wildfire will spread, and turns it into evacuation decisions a person approves. Smoke detection feeds an ensemble of physics-based spread runs, a particle filter reweights them as new observations arrive, and a learned surrogate makes the forecast fast.
-          <span class="meta">Python, PyTorch, YOLO, RT-DETR, SAM 2, U-Net, OpenCV, Shapely, DuckDB, FastAPI, GOES-18 and HRRR data, React, TypeScript, deck.gl, MapLibre</span>
+        <span class="desc">Combines satellite, camera, weather, and terrain data into a forecast of where a wildfire will spread, and turns it into evacuation decisions a person approves.
+          <span class="fact"><span class="k">I built</span> Data connectors for satellite fire detections, weather models, terrain, fuels, and roads; a time-versioned DuckDB store; smoke detection and camera self-calibration; a 60-member physics spread ensemble corrected by a particle filter; an evacuation decision layer; two PyTorch models; and the operating board.</span>
+          <span class="fact"><span class="k">Challenge</span> On real fires the ensemble came out too confident, so I added a fast-spread tail and leave-one-out calibration. Every query is pinned to a point in time, and a test enforces that a forecast can never see future data.</span>
+          <span class="fact"><span class="k">I learned</span> For a responder, calibration is the product: a forecast that knows when it is unsure beats a sharper one that does not.</span>
+          <span class="fact"><span class="k">Results</span> On pre-registered replays of five real fires, perimeter accuracy improved on all five (IoU +0.01 to +0.13), evacuation calls scored 0.88 precision and 0.82 recall, and one warning came 186 minutes early. Calibrated coverage reached 0.86 against a 0.90 target, so the uncertainty is still slightly too narrow.</span>
+          <span class="meta">Python, PyTorch, OpenCV, DuckDB, FastAPI, GOES-18, HRRR, React, TypeScript, deck.gl, MapLibre</span>
           <span class="links"><a class="u" href="https://keshavkrishnan08.github.io/firewatch/" target="_blank" rel="noopener">Live site</a><a class="u" href="https://github.com/keshavkrishnan08/firewatch" target="_blank" rel="noopener">GitHub</a></span>
         </span>
       </div>
       <div class="entry">
         <span class="name">CROSSING</span>, pedestrian safety<br>
-        <span class="desc">Watches ordinary street video and predicts which pedestrians a vehicle is about to hit, before anyone steps into the road. It detects and tracks every person and car, maps them onto the road in meters, and a recurrent network I wrote from scratch in NumPy estimates who is about to cross.
-          <span class="meta">Python, YOLOv3 (ONNX Runtime), OpenCV, ByteTrack, Kalman filters, homography, NumPy GRU, scikit-learn, FastAPI</span>
+        <span class="desc">Watches ordinary street video and predicts which pedestrians a vehicle is about to hit, before anyone steps into the road.
+          <span class="fact"><span class="k">I built</span> Detection, a ByteTrack-style tracker with Kalman filters, a world model that maps people onto the road in meters, a recurrent network for crossing intention written from scratch in NumPy and gradient-checked, conflict geometry, a calibrated risk score, and privacy controls (face and plate blurring, role-based access, audit logs).</span>
+          <span class="fact"><span class="k">Challenge</span> Boxes that overlap on screen can be meters apart in depth, so distance comes from box height and position. Parked cars jitter, so a vehicle only counts as moving after its displacement is confirmed over several frames.</span>
+          <span class="fact"><span class="k">I learned</span> Writing a network from scratch, with its gradients checked by hand, taught me more about training than any framework had.</span>
+          <span class="fact"><span class="k">Results</span> In simulation: near-miss AUROC 0.951 against 0.868 for a time-to-collision baseline, calibration error 0.002, and crossing intent flagged 2.8 seconds early on average. These numbers come from the simulator; the real-video demo uses the geometric score.</span>
+          <span class="meta">Python, YOLOv3, ONNX Runtime, OpenCV, Kalman filters, NumPy, scikit-learn, FastAPI</span>
           <span class="links"><a class="u" href="https://crossing-pi.vercel.app" target="_blank" rel="noopener">Live site</a><a class="u" href="https://github.com/keshavkrishnan08/ProjectCROSSING" target="_blank" rel="noopener">GitHub</a></span>
         </span>
       </div>
       <div class="entry">
         <span class="name">GridWatch</span>, data centers and the power grid<br>
-        <span class="desc">An interactive map of every data center planned or running in Indiana, set against the power grid, with each figure linked to its public filing. A Python pipeline gathers the data from OpenStreetMap and public records, and a static TypeScript map adds a build-out timeline and a household bill calculator.
+        <span class="desc">An interactive map of every data center planned or running in Indiana, set against the power grid, with every figure linked to the public filing it came from.
+          <span class="fact"><span class="k">I built</span> A hand-curated dataset with a source for every number, a Python pipeline that fetches, validates links, refreshes federal energy data, and watches cited sources for changes, and a map with a 2020 to 2035 timeline, ZIP code lookup, household bill model, comment letter generator, and CSV export.</span>
+          <span class="fact"><span class="k">Challenge</span> Getting the numbers right. Comparing my data with an advocacy group&#8217;s tracker showed that most megawatt figures that started in trackers disagreed with the filings, which also caught two county errors of my own. Missing figures stay null, never zero.</span>
+          <span class="fact"><span class="k">I learned</span> Provenance is a feature: tying every figure to its filing is what lets anyone trust, and correct, a public dataset.</span>
+          <span class="fact"><span class="k">Results</span> Tracks 76 projects across 32 counties: 15,142 MW at full build-out, about 43% of Indiana&#8217;s peak demand, mapped against 205 plants and 1,237 transmission segments, with 103 cited sources and 84 tests.</span>
           <span class="meta">TypeScript, Vite, MapLibre GL, D3, Python, Overpass API, Vitest, Playwright</span>
           <span class="links"><a class="u" href="https://gridwatch-indiana.vercel.app" target="_blank" rel="noopener">Live map</a><a class="u" href="https://github.com/keshavkrishnan08/GridWatch" target="_blank" rel="noopener">GitHub</a></span>
         </span>
@@ -71,15 +87,11 @@
     <section class="group">
       <p class="label spaced">More projects</p>
       <div class="entry">
-        <span class="name">EP quoting tool</span>, computer vision<br>
-        <span class="desc">Turns a photo of a bearing, flange, or gearbox into a priced coating estimate by finding the closest past jobs. It runs CLIP on ONNX Runtime with 8-bit weights, so the live demo fits on a small server.
-          <span class="meta">Python, Flask, CLIP, ONNX Runtime, NumPy, Pillow</span>
-          <span class="links"><a class="u" href="https://enviropeel-project.onrender.com" target="_blank" rel="noopener">Live demo</a><a class="u" href="https://github.com/keshavkrishnan08/Enviropeel-Project" target="_blank" rel="noopener">GitHub</a></span>
-        </span>
-      </div>
-      <div class="entry">
         <span class="name">Axon</span>, astrology for business<br>
-        <span class="desc">Turns a birth date, time, and place into a natal chart computed locally from planetary positions, a numerology life path, and a Chinese zodiac sign, then writes a reading from them. Accounts, payments, and email run in production.
+        <span class="desc">Turns a birth date, time, and place into a natal chart, a numerology life path, and a Chinese zodiac sign, then writes a reading from them.
+          <span class="fact"><span class="k">I built</span> An astronomy engine for planet positions, the Ascendant, and houses, historical daylight saving conversion, a 30-day timing scorer, language model readings with a written fallback, accounts with row-level security, payments with idempotent webhooks, and scheduled email.</span>
+          <span class="fact"><span class="k">Challenge</span> The common reference frame drifts about 0.36 degrees every 25 years, enough to put a planet in the wrong sign near a boundary, and birth times near daylight saving changes need a two-pass conversion.</span>
+          <span class="fact"><span class="k">Results</span> Checked against its own definitions: the Ascendant lands on the horizon within a millionth of a degree across 336 cases. Live with paid plans.</span>
           <span class="meta">Next.js, TypeScript, astronomy-engine, Supabase, Stripe, Resend, language models</span>
           <span class="links"><a class="u" href="https://axonservices.dev" target="_blank" rel="noopener">Live site</a><a class="u" href="https://github.com/keshavkrishnan08/AgencySite" target="_blank" rel="noopener">GitHub</a></span>
         </span>
@@ -87,13 +99,16 @@
       <div class="entry">
         <span class="name">Dwillo</span>, home maintenance app<br>
         <span class="desc">A SwiftUI app for a home&#8217;s maintenance history. Log a repair once and it works out when the task is due again, reminds you, and scores how well the house is kept up.
-          <span class="meta">Swift, SwiftUI</span>
+          <span class="fact"><span class="k">I built</span> Onboarding and a paywall, five tabs, a scheduler with 31 rules, a home health score from 12 weighted features, a spend forecast, iCloud sync, reminders, and subscriptions.</span>
+          <span class="fact"><span class="k">Challenge</span> Passing App Store review, which meant an iPad layout, an end-user license link, and removing PassKit.</span>
+          <span class="meta">Swift, SwiftUI, CloudKit, StoreKit 2</span>
           <span class="links"><a class="u" href="https://keshavkrishnan08.github.io/Dwello/" target="_blank" rel="noopener">Website</a><a class="u" href="https://github.com/keshavkrishnan08/Dwello" target="_blank" rel="noopener">GitHub</a></span>
         </span>
       </div>
       <div class="entry">
         <span class="name">Drobe</span>, wardrobe app site<br>
         <span class="desc">The landing site for Drobe, an iOS app that turns photos of your clothes into a digital closet and suggests what to wear each day.
+          <span class="fact"><span class="k">I built</span> The site, an iPhone mockup component in CSS, and the privacy and support pages.</span>
           <span class="meta">Next.js, React, TypeScript, Tailwind CSS, Framer Motion</span>
           <span class="links"><a class="u" href="https://drobe-blush.vercel.app" target="_blank" rel="noopener">Live site</a><a class="u" href="https://github.com/keshavkrishnan08/Drobe" target="_blank" rel="noopener">GitHub</a></span>
         </span>
@@ -105,7 +120,7 @@
       <p class="label">Familiar with</p>
       <ul>
         <li>Languages: Python, C++, Java, TypeScript, Swift, SQL</li>
-        <li>Machine learning: PyTorch, PyTorch Geometric, scikit-learn, XGBoost, NumPy, SciPy, pandas, statsmodels</li>
+        <li>Machine learning: PyTorch, scikit-learn, XGBoost, NumPy, SciPy, pandas, statsmodels</li>
         <li>Computer vision: YOLO, SAM 2, CLIP, OpenCV, ONNX Runtime</li>
         <li>Estimation: Kalman and particle filters, data assimilation, Monte Carlo localization</li>
         <li>Apps: Next.js, React, FastAPI, Flask, Supabase, SwiftUI</li>

@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Research · Keshav Krishnan</title>
-<meta name="description" content="Keshav Krishnan's research: safe battery fast charging (IEEE IECON 2026), a published George Mason paper on the grid carbon of AI and crypto loads, and a crop waste forecasting patent.">
+<meta name="description" content="Keshav Krishnan's research: safe battery fast charging (IEEE IECON 2026), a published George Mason paper on the grid carbon of flexible computing loads, and a crop waste forecasting patent.">
 <meta name="theme-color" content="#f1efe9">
 <link rel="canonical" href="https://keshavkrishnan.vercel.app/research">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Research · Keshav Krishnan">
-<meta property="og:description" content="Keshav Krishnan's research: safe battery fast charging (IEEE IECON 2026), a published George Mason paper on the grid carbon of AI and crypto loads, and a crop waste forecasting patent.">
+<meta property="og:description" content="Keshav Krishnan's research: safe battery fast charging (IEEE IECON 2026), a published George Mason paper on the grid carbon of flexible computing loads, and a crop waste forecasting patent.">
 <meta property="og:url" content="https://keshavkrishnan.vercel.app/research">
 <meta property="og:image" content="https://keshavkrishnan.vercel.app/assets/keshav.jpg">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjI0IiBmaWxsPSIjMWQxZDFmIi8+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxsaW5lIHgxPSIzNCIgeTE9IjI3IiB4Mj0iMzQiIHkyPSI3MyIvPjxsaW5lIHgxPSIzOCIgeTE9IjUxIiB4Mj0iNjkiIHkyPSIyNyIvPjxsaW5lIHgxPSIzOCIgeTE9IjUxIiB4Mj0iNjkiIHkyPSI3MyIvPjwvZz48L3N2Zz4K">
@@ -29,16 +29,24 @@
     <section class="group">
       <p class="label spaced">Completed</p>
       <div class="entry">
-        <span class="name">Safe Fast Charging Robust to Battery Aging</span>, 1st Author<br>
-        <span class="desc">A lightweight safety layer that keeps lithium-ion fast charging within safe limits as the battery ages. Instead of solving an optimization at every step, it runs a short, fixed bisection on a reduced-order electro-thermal cell model, tested against a full physics simulation of aged cells. Accepted at IEEE IECON 2026.
-          <span class="meta">Python, NumPy, PyBaMM (Doyle-Fuller-Newman model), OSQP and PPO-Lagrangian baselines</span>
+        <span class="name">Safe Fast Charging Robust to Battery Aging</span>, Sole author<br>
+        <span class="desc">A safety filter that keeps lithium-ion fast charging within temperature and voltage limits as the battery ages, with no optimizer in the loop and no state-of-health estimate.
+          <span class="fact"><span class="k">I built</span> The 36-line safety path (a fixed 18-step bisection on a reduced-order electro-thermal cell model), the cell model, executable safety tests, reproduction scripts, the paper, and the response to reviewers.</span>
+          <span class="fact"><span class="k">Challenge</span> Lithium plating could not be certified: above about 82% charge, even zero current no longer clears the plating margin. I scoped the guarantee to temperature and voltage, said so in the paper, and reported the cycle-life benefit as not found when the experiments did not show one.</span>
+          <span class="fact"><span class="k">I learned</span> Narrowing a claim until I could prove it made the paper stronger. The reviewers&#8217; questions were about limits, and stating them up front answered most of them.</span>
+          <span class="fact"><span class="k">Results</span> Accepted at IEEE IECON 2026. Within temperature and voltage limits on all 156 aged-cell draws, and on 100 of 100 after recalibrating to a second chemistry, at a median 56 microseconds per step; standard fast-charging protocols broke the limits in all 40 warm conditions tested. Simulation only, no hardware yet.</span>
+          <span class="meta">Python, NumPy, SciPy, OSQP baseline</span>
           <span class="links"><a class="u" href="https://github.com/keshavkrishnan08/safe-charge" target="_blank" rel="noopener">GitHub</a></span>
         </span>
       </div>
       <div class="entry">
         <span class="name">The Carbon Effect of Flexible Computing Loads</span>, 1st Author, Project Coordinator<br>
-        <span class="desc">When AI data centers and crypto miners can turn their power use up and down, do they make the grid cleaner or dirtier? A game-theoretic model of dispatch, investment, and contracts that holds for any demand distribution, checked against U.S. grid data from the EIA. The answer: dirtier, unless the load runs on surplus renewable power. Published in the Journal of Student-Scientists&#8217; Research at George Mason University, from ASSIP under Dr. Jiasun Li.
-          <span class="meta">Python, NumPy, SciPy, pandas, statsmodels, matplotlib</span>
+        <span class="desc">When do AI data centers and crypto miners, loads that can switch off at will, raise a grid&#8217;s carbon emissions, and when do they lower them? A four-person ASSIP team at George Mason University under Dr. Jiasun Li.
+          <span class="fact"><span class="k">I built</span> The general carbon theory and the optimal contract (every file in role1, with 11 verification suites), and the integration of all four roles into one repository with a single reproduction script. I coordinated the team&#8217;s weekly plans.</span>
+          <span class="fact"><span class="k">Challenge</span> My theory said carbon can fall; a teammate&#8217;s solver said it never did. Reconciling them led to the surplus-only contract. A self-audit also caught a sign error in two theorems, and an adversarial review downgraded two claims I had overstated.</span>
+          <span class="fact"><span class="k">I learned</span> Checking every closed form numerically, and inviting reviewers to attack the theorems, caught errors that rereading never would.</span>
+          <span class="fact"><span class="k">Results</span> Published in the Journal of Student-Scientists&#8217; Research (2026) and presented at the George Mason student conference. Under run-whenever-it-pays dispatch a large flexible load raises emissions; running it only on renewable power that would otherwise be wasted is carbon-optimal.</span>
+          <span class="meta">Python, NumPy, SciPy, closed-form analysis, numerical verification</span>
           <span class="links"><a class="u" href="https://journals.gmu.edu/jssr/article/view/5665" target="_blank" rel="noopener">Paper</a><a class="u" href="https://doi.org/10.13021/jssr2026.5665" target="_blank" rel="noopener">DOI</a><a class="u" href="https://github.com/keshavkrishnan08/flexible-load-carbon" target="_blank" rel="noopener">Code</a><a class="u" href="https://github.com/keshavkrishnan08/bitcoin-mining-emissions" target="_blank" rel="noopener">Screening analysis</a></span>
         </span>
       </div>
@@ -48,8 +56,12 @@
       <p class="label spaced">Patents</p>
       <div class="entry">
         <span class="name">Crop Waste Forecasting</span>, Inventor<br>
-        <span class="desc">A graph neural network that predicts which harvests will go to waste by following price shocks through the U.S. supply chain. Price drops spread along a commodity graph and price rises along a geographic one, and a small neural network turns both into a forecast for each county. Filed as a U.S. provisional patent.
-          <span class="meta">PyTorch, PyTorch Geometric, scikit-learn, XGBoost, statsmodels, GeoPandas, Google Earth Engine</span>
+        <span class="desc">Forecasts which corn, soybean, and wheat harvests will go unharvested, county by county, by following price shocks through the U.S. supply chain.
+          <span class="fact"><span class="k">I built</span> The whole pipeline: loaders for USDA, NOAA, FRED, and Census data (638,622 county-month rows across 2,130 counties, 2015 to 2025), graph diffusion features in which price drops travel a commodity graph and price rises a geographic one, a small neural network, significance tests, and the patent claims.</span>
+          <span class="fact"><span class="k">Challenge</span> Full graph neural networks took over 12 hours on a CPU and did not beat simpler inputs, so I replaced them with precomputed diffusion features and a 13,703-parameter network.</span>
+          <span class="fact"><span class="k">I learned</span> The model is rarely the bottleneck. Getting the graph and the labels right moved the result more than any architecture did.</span>
+          <span class="fact"><span class="k">Results</span> AUC 0.935 against 0.917 for local features alone (p &lt; 0.001), and filed as a U.S. provisional patent with 26 claims. On a split by time, local features still win (0.910 against 0.892), which is the next problem to solve.</span>
+          <span class="meta">Python, PyTorch, scikit-learn, XGBoost, statsmodels, GeoPandas</span>
           <span class="links"><a class="u" href="https://github.com/keshavkrishnan08/CasCrop" target="_blank" rel="noopener">GitHub</a></span>
         </span>
       </div>
