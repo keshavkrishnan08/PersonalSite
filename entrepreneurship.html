@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Entrepreneurship · Keshav Krishnan</title>
-<meta name="description" content="Companies Keshav Krishnan founded and built: Kilra, CropConnect, and VolunteerU, with what he built, the hard parts, and results.">
+<meta name="description" content="Companies Keshav Krishnan founded: Kilra, CropConnect, and VolunteerU.">
 <meta name="theme-color" content="#f1efe9">
 <link rel="canonical" href="https://keshavkrishnan.vercel.app/entrepreneurship">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Entrepreneurship · Keshav Krishnan">
-<meta property="og:description" content="Companies Keshav Krishnan founded and built: Kilra, CropConnect, and VolunteerU, with what he built, the hard parts, and results.">
+<meta property="og:description" content="Companies Keshav Krishnan founded: Kilra, CropConnect, and VolunteerU.">
 <meta property="og:url" content="https://keshavkrishnan.vercel.app/entrepreneurship">
 <meta property="og:image" content="https://keshavkrishnan.vercel.app/assets/keshav.jpg">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjI0IiBmaWxsPSIjMWQxZDFmIi8+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxsaW5lIHgxPSIzNCIgeTE9IjI3IiB4Mj0iMzQiIHkyPSI3MyIvPjxsaW5lIHgxPSIzOCIgeTE9IjUxIiB4Mj0iNjkiIHkyPSIyNyIvPjxsaW5lIHgxPSIzOCIgeTE9IjUxIiB4Mj0iNjkiIHkyPSI3MyIvPjwvZz48L3N2Zz4K">
@@ -30,33 +30,21 @@
       <p class="label spaced">Founded</p>
       <div class="entry">
         <span class="name">Kilra</span>, Founder, CEO<br>
-        <span class="desc">A symptom and wellness tracker for iPhone that shows the real triggers behind how you feel. People log symptoms, mood, sleep, and medications, and Kilra works out which of those actually go with their worse days.
-          <span class="fact"><span class="k">I built</span> The whole iOS app: 13-step onboarding, four-step symptom logging, a wellness score, on-device trigger statistics (Welch t-tests and Pearson correlations), symptom clustering, a severity forecast, Apple Health and weather context, iCloud sync, PDF and CSV reports to bring to a doctor, and subscriptions.</span>
-          <span class="fact"><span class="k">Challenge</span> Making patterns trustworthy from one person&#8217;s month of data. Every trigger is tested for significance before it is shown, and all of it runs on the phone, so health data never leaves the user&#8217;s own iCloud.</span>
-          <span class="fact"><span class="k">I learned</span> A simple statistic people can check beats an impressive model they cannot. I trained a Core ML model, but kept it out of the scoring until it can learn from real data.</span>
-          <span class="fact"><span class="k">Results</span> Live on the App Store (version 4.1), rated 4.4 from 8 ratings, with about $10K in annualized revenue.</span>
+        <span class="desc">A symptom and wellness tracker for iPhone that shows the real triggers behind how you feel. I built the whole app: people log symptoms, mood, sleep, and medications, and on-device statistics test which of those actually go with their worse days, with Apple Health and weather context and a report to bring to a doctor. It is live on the App Store, rated 4.4, with about $10K in annualized revenue.
           <span class="meta">Swift, SwiftUI, SwiftData, HealthKit, CloudKit, StoreKit 2, on-device statistics</span>
           <span class="links"><a class="u" href="https://apps.apple.com/us/app/kilra-symptom-tracker/id6760767331" target="_blank" rel="noopener">App Store</a><a class="u" href="https://kilra.vercel.app" target="_blank" rel="noopener">Website</a><a class="u" href="https://github.com/keshavkrishnan08/Kilra" target="_blank" rel="noopener">GitHub</a></span>
         </span>
       </div>
       <div class="entry">
         <span class="name">CropConnect</span>, Founder<br>
-        <span class="desc">Done-for-you local produce sourcing for restaurants. We find and vet the farms and run delivery, so a kitchen can put named local farms on the menu and charge more for it.
-          <span class="fact"><span class="k">I built</span> The site and the operator app: a margin model that prices a menu with local produce, a menu parser, farm ranking by crop match, reliability, distance, and price, supply contracts with quality specs and service credits, a profit recovery tool, accounts, and the meeting request flow.</span>
-          <span class="fact"><span class="k">Challenge</span> Keeping a client-heavy app consistent: a deterministic first render so the server and browser draw the same page, and a debounced writer that never runs two saves at once and always keeps the newest state.</span>
-          <span class="fact"><span class="k">I learned</span> The software was the easy half. The business is supply and trust, and a chef is persuaded by a margin calculation on their own menu, not by a feature list.</span>
-          <span class="fact"><span class="k">Results</span> Live at cropconnect.dev. Still early: the farm network is a seed list of six Indianapolis-area farms, and payments are not wired in yet.</span>
-          <span class="meta">Next.js, React, TypeScript, Tailwind CSS, Supabase (Postgres, auth), Leaflet, Playwright, Vercel</span>
+        <span class="desc">Done-for-you local produce sourcing for restaurants. We find and vet the farms and run delivery, so kitchens can put named local farms on the menu and charge more for it. I built the site and the operator app behind it: a margin model that prices a menu with local produce, farm ranking, and supply contracts with quality specs.
+          <span class="meta">Next.js, React, TypeScript, Tailwind CSS, Supabase (Postgres, auth), Leaflet, Vercel</span>
           <span class="links"><a class="u" href="https://cropconnect.dev" target="_blank" rel="noopener">cropconnect.dev</a><a class="u" href="https://github.com/keshavkrishnan08/crop-connect" target="_blank" rel="noopener">GitHub</a></span>
         </span>
       </div>
       <div class="entry">
         <span class="name">VolunteerU</span>, Cofounder<br>
-        <span class="desc">A free platform where students start volunteer organizations and log hours that their organizers verify.
-          <span class="fact"><span class="k">I built</span> Most of the app (76 of 99 commits): the screens, the organization workspace, listings, the local store, and cloud sync. Aryav Das added the photo card redesign, the nonprofit map, the database migrations, and security fixes.</span>
-          <span class="fact"><span class="k">Challenge</span> Never losing a volunteer&#8217;s hours: a durable sync outbox that retries with backoff and refuses to overwrite cloud data with a stale or empty copy.</span>
-          <span class="fact"><span class="k">I learned</span> Sharing a codebase made me write code another person can change safely, with clear states for loading, empty, and failed.</span>
-          <span class="fact"><span class="k">Results</span> Live at volunteeruapp.com. Organization verification is still manual, and the launch to real users is next.</span>
+        <span class="desc">A free platform that helps students start and run volunteer organizations and log hours their organizers verify. I wrote most of the app, including the organization workspace and a sync layer that never overwrites cloud data with a stale copy.
           <span class="meta">Next.js, React, Supabase (Postgres, auth), PostHog</span>
           <span class="links"><a class="u" href="https://volunteeruapp.com" target="_blank" rel="noopener">volunteeruapp.com</a><a class="u" href="https://github.com/keshavkrishnan08/VolunteerU" target="_blank" rel="noopener">GitHub</a></span>
         </span>
